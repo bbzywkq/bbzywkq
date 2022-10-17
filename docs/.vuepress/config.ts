@@ -19,9 +19,13 @@ export default defineUserConfig({
         navbar,
         logo: 'logo/logo.png',//日间模式logo
         logoDark: 'logo/logo-dark.png',//夜间模式logo
-        //repo: 'bbzywkq/',//仓库地址信息
-        repo: 'https://github.com/bbzywkq/bbzywkq.github.io/docs',// 也可直接设置为一个 URL
+        repo: 'bbzywkq/bbzywkq.github.io/tree/main/docs',//仓库地址信息
+        //docsRepo: 'https://github.com/bbzywkq/bbzywkq.github.io/tree/main/docs',
         //repoLabel:'我就想不通了'
+        docsRepo: 'https://github.com/bbzywkq/bbzywkq.github.io',
+        docsBranch: 'main',
+        docsDir: 'docs',
+        editLinkPattern: ':repo/edit/:branch/:path',
         sidebar: 'auto',//侧边栏配置
         sidebarDepth: 2,
         editLink: true,//是否启用编辑此页面
