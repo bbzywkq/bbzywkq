@@ -19,7 +19,7 @@ export default defineUserConfig({
         navbar,
         logo: 'logo/logo.png',//日间模式logo
         logoDark: 'logo/logo-dark.png',//夜间模式logo
-        repo: 'bbzyalone/myblog',//仓库地址信息
+        repo: 'bbzywkq/bbzywkq.github.io',//仓库地址信息
         //repo: 'https://gitlab.com/foo/bar',// 也可直接设置为一个 URL
         //repoLabel:'我就想不通了'
         sidebar: 'auto',//侧边栏配置
