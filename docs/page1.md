@@ -41,7 +41,6 @@ sidebarDepth: 2
 - VuePress - <Badge type="warning" text="v2" vertical="middle" />
 - VuePress - <Badge type="danger" text="v2" vertical="bottom" />
 
-
 ::: tip
 这是一个提示
 :::
@@ -71,6 +70,8 @@ const bar = 'bar'
 :::
 ::::
 
+
+
 [logo设计](https://www.uugai.com/)
 
 [logo素材](https://www.logosc.cn/logo/)
@@ -88,6 +89,4 @@ const bar = 'bar'
 
 [logo设计](https://www.uugai.com/)
 
-
-
-<img src="http://file.bbzy.online//blog/houses-5763699_1920.jpg" alt="houses-5763699_1920"  />
+![fog-7482180_1920](https://file.bbzy.online//blog/fog-7482180_1920.jpg)
