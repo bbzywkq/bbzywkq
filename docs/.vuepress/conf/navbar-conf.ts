@@ -3,7 +3,7 @@ const navbar=[
     // NavbarItem
     {
         text: '待归档文件',
-        link: '待整理/',
+        link: '/待整理/',
     },
     // NavbarItem
     {
