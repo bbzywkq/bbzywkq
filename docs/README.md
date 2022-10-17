@@ -7,7 +7,7 @@ heroImageDark: /images/houses-5763699_1920.jpg
 #首页大标题
 heroText: bbzywkq
 #首页标语-如果不设置，则默认使用站点 description 
-tagline: 风萧兮兮易水寒
+tagline: 风萧萧兮易水寒
 #首页按钮
 actions:
   - text: 演示
