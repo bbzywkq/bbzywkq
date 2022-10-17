@@ -29,8 +29,6 @@ du -sh /\* 查看哪个目录最大，一步一步的查找大文件，比如：
 
 3、
 
-![image](images/L_xt6GPHq3KtNfmOopDfrLaBOrYVGtS21ZYjnBveTFE.)
-
  查看某个目录： **du -bsh /\*\*\*/** 命令
 
      例：查看根目录下的/bin/文件占用情况 
