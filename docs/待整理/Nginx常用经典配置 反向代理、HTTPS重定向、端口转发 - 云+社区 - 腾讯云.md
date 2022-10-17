@@ -1,7 +1,7 @@
 # Nginx常用经典配置|反向代理、HTTPS重定向、端口转发 - 云+社区 - 腾讯云
 Nginx常用经典配置|反向代理、HTTPS重定向、端口转发 - 云+社区 - 腾讯云
 
-![image](images/nbin5ncm70.png)
+![image](https://file.bbzy.online/blog/nbin5ncm70.png)
 
 二级目录映射 目前前后端项目分离场景多了以后，一般是前端一个端口，后端一个端口。
 
