@@ -20,7 +20,7 @@ export default defineUserConfig({
         logo: 'logo/logo.png',//日间模式logo
         logoDark: 'logo/logo-dark.png',//夜间模式logo
         //repo: 'bbzywkq/',//仓库地址信息
-        repo: 'https://github.com/bbzywkq/bbzywkq.github.io',// 也可直接设置为一个 URL
+        repo: 'https://github.com/bbzywkq/bbzywkq.github.io/docs',// 也可直接设置为一个 URL
         //repoLabel:'我就想不通了'
         sidebar: 'auto',//侧边栏配置
         sidebarDepth: 2,
