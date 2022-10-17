@@ -11,7 +11,7 @@ tagline: 风萧萧兮易水寒
 #首页按钮
 actions:
   - text: 演示
-    link: 演示
+    link: 演示.md
     type: primary
   - text: 项目简介
     link: /guide/
