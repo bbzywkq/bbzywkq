@@ -1362,7 +1362,7 @@ cellpadding="单元格与内容之间的空隙"
 ## 介绍说明
 ![image](https://file.bbzy.online/blog/7yH61KAO6J4cAqGgJQiwdPmnZ0Dp2ns6_GCx2SnUS5c.png)
 
-![image](images/xqsg869-8VK4fIkPNWNQsQsl-w2Ow3Okrj41rimRp1E.png)
+![image](https://file.bbzy.online/blog/xqsg869-8VK4fIkPNWNQsQsl-w2Ow3Okrj41rimRp1E.png)
 
 ![image](https://file.bbzy.online/blog/Z-9pTd6ZKZJgQRNLgelXxRrgW-wrt-cuwodsCTe4QF0.gif)
 
