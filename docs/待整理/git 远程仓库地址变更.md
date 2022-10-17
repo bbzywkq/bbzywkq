@@ -17,7 +17,7 @@
 ![image](https://file.bbzy.online/blog/HZwcSn2gffDcsN1jUW4SJcg6RcJXRwEDZuZNzgSt07E.png)
 
 # git push 流程验证
-![image](images/VEg4SeJqB_k5f1Uqq48XynuB2KeV7QvqdNQOfd4rh3s.png)
+![image](https://file.bbzy.online/blog/VEg4SeJqB_k5f1Uqq48XynuB2KeV7QvqdNQOfd4rh3s.png)
 
 ![image](https://file.bbzy.online/blog/GBQF-isRcUYhNgLrrm0mLrt9lbmV4y6SqUrulNjWAaw.png)
 
