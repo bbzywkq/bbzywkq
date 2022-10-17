@@ -25,11 +25,11 @@ export default defineUserConfig({
         sidebar: 'auto',//侧边栏配置
         sidebarDepth: 2,
         editLink: true,//是否启用编辑此页面
-        editLinkText: '帮我修改下此页面吧',
+        //editLinkText: '帮我修改下此页面吧',
         lastUpdated: true,//是否启用最近编辑时间
-        lastUpdatedText: '最近编辑时间',
+        //lastUpdatedText: '最近编辑时间',
         contributors: true,//是否启用贡献者列表
-        contributorsText: '贡献者列表',
+        //contributorsText: '贡献者列表',
     }),
     //插件项配置
     plugins: [

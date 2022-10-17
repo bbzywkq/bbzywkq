@@ -2,7 +2,7 @@
 #是否在本页面中启用 编辑此页 链接
 editLink: true
 #本页面中 编辑此页 链接的 Pattern 
-editLinkPattern: https://www.baidu.com
+#editLinkPattern: https://www.baidu.com
 #是否在本页面中启用 最近更新时间戳 
 lastUpdated: true
 #是否启用贡献者列表
