@@ -2,8 +2,8 @@
 const navbar=[
     // NavbarItem
     {
-        text: '你好',
-        link: '/foo/',
+        text: '待归档',
+        link: '/待整理/',
     },
     // NavbarGroup
     {
