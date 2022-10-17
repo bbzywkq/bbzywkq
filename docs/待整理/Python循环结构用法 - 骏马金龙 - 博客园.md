@@ -658,6 +658,3 @@ print(D)
 ```
 **转载请注明出处：\*\*\*\*https://www.cnblogs.com/f-ck-need-u/p/10129317.html**
 
-**如果觉得文章不错，不妨给个打赏，写作不易，各位的支持，能激发和鼓励我更大的写作热情。谢谢！**  
-
-![image](images/wealipay.bmp)
