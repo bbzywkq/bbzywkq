@@ -754,7 +754,7 @@ Notify.test_email('*******@qq.com','email title','email content desc').deliver_n
 ```
 如果能收到邮件，则说明配置正确。
 
-![image](images/433dc2eda35667e561bad2ab552a3b9e.png)
+![image](https://file.bbzy.online/blog/433dc2eda35667e561bad2ab552a3b9e.png)
 
 #### 7.4 创建项目
 关于gitlab的具体使用方法，请参考百度。
@@ -817,11 +817,11 @@ gitlab-runner --help
 #### 8.2 注册Runner与Demo测试
 然后我们回到gitlab网站，打开前面创建的Spring Boot项目，在项目页面中找到：设置-》CI/CD，然后展开runner下拉栏：
 
-![image](images/35b50838ce9641607d9afb57b48af8b0.png)
+![image](https://file.bbzy.online/blog/35b50838ce9641607d9afb57b48af8b0.png)
 
 在专用Runner栏，继续往下翻，找到URL和Token，我们用的的信息是这两个：
 
-![image](images/dbd017d8634274c081d44386d6f7b73a.png)
+![image](https://file.bbzy.online/blog/dbd017d8634274c081d44386d6f7b73a.png)
 
 然后回到服务器，输入下面的命令开始注册：
 
@@ -831,7 +831,7 @@ gitlab-runner register
 ```
 下图（有一些配置错误）仅供参考，详细的说明请继续看：
 
-![image](images/7c6ef1b51887a8ba40c7f6834faddac9.png)
+![image](https://file.bbzy.online/blog/7c6ef1b51887a8ba40c7f6834faddac9.png)
 
 详细说明如下（注意看注释）：
 
@@ -871,11 +871,11 @@ Runner registered successfully. Feel free to start it, but if it's running alrea
 ```
 至此，返回到gitlab网站，刷新页面，在专用Runner栏往下翻，即可看到注册成功的Runner：
 
-![image](images/a5a097d5a6de2b8aee473e55cf35dc50.png)
+![image](https://file.bbzy.online/blog/a5a097d5a6de2b8aee473e55cf35dc50.png)
 
 然后返回到本地的项目，在项目的根目录，创建两个文件，并分别写入如下内容：
 
-![image](images/3b5cb410d8085333d1ff35ddc9121707.png)
+![image](https://file.bbzy.online/blog/3b5cb410d8085333d1ff35ddc9121707.png)
 
 .gitlab-ci.yml ：
 
@@ -946,21 +946,21 @@ public class UserController {
 
 返回Gitlab网站，查看侧边栏的 **CI/CD -> 流水线** 模块，即可看到提交的项目正在构建。
 
-![image](images/f954fcd7c5d8f1e7c67c9d9279a92bf4.png)
+![image](https://file.bbzy.online/blog/f954fcd7c5d8f1e7c67c9d9279a92bf4.png)
 
 然后点击 上图标注 位置的按钮，进入新页面，点击 下图标注的位置：
 
-![image](images/6f7842b55ba8cdca7b039ded2be7e7c4.png)
+![image](https://file.bbzy.online/blog/6f7842b55ba8cdca7b039ded2be7e7c4.png)
 
 即可查看详细执行的命令：
 
-![image](images/0811ecf636f70464b407b20b564d332b.png)
+![image](https://file.bbzy.online/blog/0811ecf636f70464b407b20b564d332b.png)
 
 这里可以观察项目部署中的错误，及时调整和修改`.gitlab-ci.yml`、`Dockerfile`两个文件。
 
 然后，通过服务器IP加端口的形式，即可访问Demo中的实例：
 
-![image](images/d047cfb0f92ad7c857a6611e79cbdb5b.png)
+![image](https://file.bbzy.online/blog/d047cfb0f92ad7c857a6611e79cbdb5b.png)
 
 至此，测试人员、前端开发人员即可调用该API。
 
@@ -1016,8 +1016,6 @@ https://blog.csdn.net/cxh\_1231/article/details/115479535
 栏目
 
 [编程语言](http://www.voycn.com/lang)
-
-![image](http://www.voycn.com/sites/default/files/inline-images/shenyuan.jpg)
 
 ## 最新内容
 * [SparkStreaming接收Flume数据方式一：Push模式](http://www.voycn.com/article/sparkstreamingjieshouflumeshujufangshiyipushmoshi)
