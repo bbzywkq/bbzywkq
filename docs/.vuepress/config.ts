@@ -11,6 +11,14 @@ export default defineUserConfig({
     lang: 'zh-CN',
     title: '你好, bbzywkq !',
     description: '这是我的第一个 VuePress 站点',
+    //插件项配置
+    plugins: [
+        searchPlugin({
+            // 搜索排除项函数
+            isSearchable: (page) => page.path !== '/',
+
+        }),
+    ],
     //主题配置
     theme: defaultTheme({
         colorModeSwitch: true,//是否启动主题颜色切换
@@ -29,18 +37,10 @@ export default defineUserConfig({
         sidebar: 'auto',//侧边栏配置
         sidebarDepth: 2,
         editLink: true,//是否启用编辑此页面
-        //editLinkText: '帮我修改下此页面吧',
+        editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: true,//是否启用最近编辑时间
-        //lastUpdatedText: '最近编辑时间',
+        lastUpdatedText: '上次更新',
         contributors: true,//是否启用贡献者列表
-        //contributorsText: '贡献者列表',
+        contributorsText: '编辑者',
     }),
-    //插件项配置
-    plugins: [
-        searchPlugin({
-            // 搜索排除项函数
-            isSearchable: (page) => page.path !== '/',
-
-        }),
-    ],
 })

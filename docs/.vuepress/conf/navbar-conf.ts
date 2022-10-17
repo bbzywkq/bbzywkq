@@ -2,8 +2,13 @@
 const navbar=[
     // NavbarItem
     {
-        text: '待归档',
+        text: '待归档文件',
         link: '/待整理/',
+    },
+    // NavbarItem
+    {
+        text: '待归档信息',
+        link: '/资源汇总.md',
     },
     // NavbarGroup
     {
