@@ -5,6 +5,21 @@ const navbar = [
     //     text: '前端',
     //     link: '/待整理/',
     // },
+    //搜索
+    {
+        text: '检索',
+        children:[
+            {
+                text:'google',
+                link:'https://www.google.com'
+            },
+            {
+                text:'yandex',
+                link:'https://yandex.com/'
+            },
+        ]
+    },
+    //前端
     {
         text: '前端',
         children: [
@@ -125,18 +140,18 @@ const navbar = [
                         text: 'vite',
                         link: 'https://cn.vitejs.dev/guide/'
                     },
-                    // {
-                    //     text: '',
-                    //     link: ''
-                    // },
-                    // {
-                    //     text: '',
-                    //     link: ''
-                    // },
-                    // {
-                    //     text: '',
-                    //     link: ''
-                    // },
+                    {
+                        text: 'reactjs',
+                        link: 'https://zh-hans.reactjs.org/'
+                    },
+                    {
+                        text: 'vue',
+                        link: 'https://cn.vuejs.org/'
+                    },
+                    {
+                        text: 'next',
+                        link: 'https://www.nextjs.cn/'
+                    },
                 ]
             },
             {
@@ -313,10 +328,10 @@ const navbar = [
                         text:'gradle',
                         link:''
                     },
-                    // {
-                    //     text:'',
-                    //     link:''
-                    // },
+                    {
+                        text:'jabba',
+                        link:'https://github.com/shyiko/jabba'
+                    },
                 ]
             },
         ]
@@ -331,6 +346,24 @@ const navbar = [
                         text:'语言基础',
                         link:'https://docs.python.org/zh-cn/3/tutorial/index.html'
                     }
+                ]
+            },
+            {
+                text:'框架生态',
+                children:[
+                    {
+                        text:'django',
+                        link:'https://docs.djangoproject.com/zh-hans/4.1/'
+                    }
+                ]
+            },
+            {
+                text: '模块和库',
+                children: [
+                    {
+                        text:'python-falsk',
+                        link:'http://docs.jinkan.org/docs/flask/installation.html##installation'
+                    },
                 ]
             },
             {
@@ -712,6 +745,16 @@ const navbar = [
                     },
                 ]
             },
+            {
+                text:'云盘',
+                children:[
+
+                    {
+                        text:'百度网盘]',
+                        link:'https://pan.baidu.com'
+                    },
+                ]
+            },
             
         ]
     },
@@ -782,6 +825,82 @@ const navbar = [
             // },
         ],
     },
+    //博主&建站
+    {
+        text:'博主&建站',
+        children:[
+            {
+                text:'博主',
+                children:[
+                    {
+                        text:'Jitwxs',
+                        link:'https://jitwxs.cn'
+                    },
+                    {
+                        text:'架构师',
+                        link:'https://www.mobaijun.com'
+                    },
+                    {
+                        text:'友人c',
+                        link:'https://www.ihewro.com'
+                    },
+                    {
+                        text:'哈喽',
+                        link:'https://www.cnblogs.com/hahaha111122222'
+                    },
+                    {
+                        text:'日拱一兵',
+                        link:'https://dayarch.top/'
+                    },
+                    {
+                        text:'ArcherGu',
+                        link:'https://archergu.me/posts'
+                    },
+                    {
+                        text:'阿虚同学',
+                        link:'https://axutongxue.com/'
+                    },
+                    {
+                        text:'骏马金龙',
+                        link:'https://www.junmajinlong.com'
+                    },
+                    {
+                        text:'小弋の生活馆',
+                        link:'https://lovelijunyi.gitee.io/'
+                    },
+                    {
+                        text:'java全栈知识体系',
+                        link:'https://pdai.tech'
+                    },
+                    // {
+                    //     text:'',
+                    //     link:''
+                    // },
+                ]
+            },
+            {
+                text:'建站',
+                children:[
+                    {
+                        text:'hexo',
+                        link:'https://hexo.io/zh-cn/index.html'
+                    },
+                    {
+                        text:'vuepress',
+                        link:'https://v2.vuepress.vuejs.org/zh/'
+                    },
+                    {
+                        text:'halo',
+                        link:'https://halo.run'
+                    },
+                    {
+                        text:'astro',
+                        link:'https://docs.astro.build/zh-cn/getting-started/'
+                    },
+                ]
+            }
+        ]
+    }
     // NavbarGroup
     // {
     //     text: '文档',
