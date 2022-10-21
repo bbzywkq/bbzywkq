@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T18:59:09.235Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="FWSq6z9_x4P_85bXyqoW" version="20.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-21T19:00:58.906Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="bNsH1cosS2xE-8IrLYwr" version="20.5.0" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
-    <mxGraphModel dx="1470" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1454" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="-jn-j5KkJefASaCqUATf-5" value="前端体系结构" style="swimlane;fillColor=#D5E8D4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="20" y="40" width="1410" height="1500" as="geometry" />
+          <mxGeometry x="20" y="40" width="1580" height="1570" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-50" value="组件库" style="swimlane;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#CCCCCC;startSize=30;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
           <mxGeometry x="4" y="900" width="390" height="270" as="geometry" />
@@ -87,11 +87,8 @@
         <mxCell id="-jn-j5KkJefASaCqUATf-70" value="node环境" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontSize=15;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
           <mxGeometry x="590" y="1230" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-109" value="javacript框架" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry x="410" y="580" width="1000" height="600" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-111" value="vue.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
-          <mxGeometry x="10" y="35" width="850" height="245" as="geometry" />
+        <mxCell id="-jn-j5KkJefASaCqUATf-111" value="vue.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
+          <mxGeometry x="400" y="900" width="980" height="270" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-112" value="vue.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
           <mxGeometry x="10" y="40" width="100" height="40" as="geometry" />
@@ -140,48 +137,6 @@
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-254" value="element" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-253">
           <mxGeometry x="5" y="80" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-120" value="react.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
-          <mxGeometry x="10" y="304" width="490" height="245" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-124" value="react.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="10" y="40" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-125" value="next.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="130" y="40" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-126" value="react-hooks" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="10" y="91" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-128" value="redux" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="10" y="139" width="100" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-129" value="redux Toolkit" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;opacity=40;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="10" y="194" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-130" value="react-query" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="130" y="91" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-131" value="react-router" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="130" y="139" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-132" value="styled components" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="130" y="194" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-133" value="Material MUI" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="250" y="40" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-154" value="Ant &amp;nbsp;design" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="250" y="91" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-176" value="Rramer Motion" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="250" y="139" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-199" value="Recharges" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="250" y="194" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-200" value="react hook form" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="370" y="40" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
