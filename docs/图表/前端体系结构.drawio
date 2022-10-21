@@ -1,34 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T18:36:39.493Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="zyMPK5Xsw32kHfL50Vy8" version="20.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-21T18:55:38.055Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="3_hb9DvHgI_pOiNNo_oA" version="20.5.0" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="1470" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="-jn-j5KkJefASaCqUATf-5" value="前端体系结构" style="swimlane;fillColor=#D5E8D4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="20" y="40" width="980" height="1500" as="geometry" />
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=2;" edge="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint y="1190" as="sourcePoint" />
-            <mxPoint x="980" y="1190" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-51" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;底层&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-jn-j5KkJefASaCqUATf-9">
-          <mxGeometry x="-0.0041" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-18" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=2;rounded=0;" edge="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint y="880" as="sourcePoint" />
-            <mxPoint x="980" y="880" as="targetPoint" />
-          </mxGeometry>
+          <mxGeometry x="20" y="40" width="1410" height="1500" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-50" value="组件库" style="swimlane;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#CCCCCC;startSize=30;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
           <mxGeometry x="4" y="900" width="390" height="270" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-37" value="UI组件库" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=none;swimlaneFillColor=#E6E6E6;" vertex="1" parent="-jn-j5KkJefASaCqUATf-50">
-          <mxGeometry x="60" y="15" width="140" height="240" as="geometry" />
+          <mxGeometry x="60" y="15" width="140" height="210" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-48" value="mui" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="-jn-j5KkJefASaCqUATf-37">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
@@ -45,11 +28,8 @@
         <mxCell id="-jn-j5KkJefASaCqUATf-43" value="view" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="-jn-j5KkJefASaCqUATf-37">
           <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-42" value="vant" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="-jn-j5KkJefASaCqUATf-37">
-          <mxGeometry y="180" width="140" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-41" value="swiper" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="-jn-j5KkJefASaCqUATf-37">
-          <mxGeometry y="210" width="140" height="30" as="geometry" />
+          <mxGeometry y="180" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-26" value="动画库" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#E6E6E6;" vertex="1" parent="-jn-j5KkJefASaCqUATf-50">
           <mxGeometry x="220" y="15" width="140" height="120" as="geometry" />
@@ -108,10 +88,10 @@
           <mxGeometry x="590" y="1230" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-109" value="javacript框架" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry x="410" y="900" width="560" height="280" as="geometry" />
+          <mxGeometry x="410" y="580" width="1000" height="600" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-111" value="vue.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
-          <mxGeometry x="10" y="35" width="260" height="245" as="geometry" />
+          <mxGeometry x="10" y="35" width="530" height="245" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-112" value="vue.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
           <mxGeometry x="10" y="40" width="100" height="40" as="geometry" />
@@ -126,19 +106,34 @@
           <mxGeometry x="10" y="192" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-116" value="vue-router" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="140" y="40" width="100" height="40" as="geometry" />
+          <mxGeometry x="124" y="40" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-117" value="vue-loader" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="140" y="90" width="100" height="40" as="geometry" />
+          <mxGeometry x="124" y="90" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-118" value="vuepress" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="140" y="142" width="100" height="40" as="geometry" />
+          <mxGeometry x="124" y="142" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-119" value="nuxt.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="140" y="192" width="100" height="40" as="geometry" />
+          <mxGeometry x="124" y="192" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-201" value="babel-plugin-jsx" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="238" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-227" value="Mint ui" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="238" y="90" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-228" value="bootstrap-due" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="238" y="142" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-241" value="vant" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="238" y="192" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-242" value="nutui" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="350" y="40" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-120" value="react.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
-          <mxGeometry x="300" y="35" width="240" height="245" as="geometry" />
+          <mxGeometry x="10" y="304" width="490" height="245" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-124" value="react.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
           <mxGeometry x="10" y="40" width="100" height="40" as="geometry" />
@@ -161,8 +156,23 @@
         <mxCell id="-jn-j5KkJefASaCqUATf-131" value="react-router" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
           <mxGeometry x="130" y="139" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-132" value="css module" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+        <mxCell id="-jn-j5KkJefASaCqUATf-132" value="styled components" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
           <mxGeometry x="130" y="194" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-133" value="Material MUI" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="250" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-154" value="Ant &amp;nbsp;design" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="250" y="91" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-176" value="Rramer Motion" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="250" y="139" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-199" value="Recharges" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="250" y="194" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-200" value="react hook form" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="370" y="40" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
