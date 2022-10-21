@@ -7,7 +7,7 @@ heroImageDark: /images/bulldog-7476727_1920.jpg
 #首页大标题
 heroText: bbzywkq
 #首页标语-如果不设置，则默认使用站点 description 
-tagline: 打倒最可怕的邪恶，难免要撕去虚假正义的薄薄糖衣。
+tagline: 
 #首页按钮
 actions:
   - text: vue生态
