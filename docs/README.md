@@ -1,13 +1,13 @@
 ---
 home: true
 #首页图片
-heroImage: /images/houses-5763699_1920.jpg
+heroImage: /images/bulldog-7476727_1920.jpg
 #首页图片夜间模式
-heroImageDark: /images/houses-5763699_1920.jpg
+heroImageDark: /images/bulldog-7476727_1920.jpg
 #首页大标题
 heroText: bbzywkq
 #首页标语-如果不设置，则默认使用站点 description 
-tagline: 风萧萧兮易水寒
+tagline: 打倒最可怕的邪恶，难免要撕去虚假正义的薄薄糖衣。
 #首页按钮
 actions:
   - text: vue生态
