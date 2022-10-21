@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T18:33:10.364Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="hjquxV-6VEhxDAgsHDgz" version="20.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-21T18:36:39.493Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="zyMPK5Xsw32kHfL50Vy8" version="20.5.0" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="1470" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -147,13 +147,22 @@
           <mxGeometry x="130" y="40" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-126" value="react-hooks" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
-          <mxGeometry x="10" y="95" width="100" height="40" as="geometry" />
+          <mxGeometry x="10" y="91" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-128" value="redux" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
           <mxGeometry x="10" y="139" width="100" height="55" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-129" value="redux Toolkit" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;opacity=40;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
           <mxGeometry x="10" y="194" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-130" value="react-query" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="130" y="91" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-131" value="react-router" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="130" y="139" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-132" value="css module" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-120">
+          <mxGeometry x="130" y="194" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
