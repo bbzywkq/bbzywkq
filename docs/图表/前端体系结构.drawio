@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T19:13:42.731Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="qEYXOkRKm5q2wnPCDg1x" version="20.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-21T19:16:22.920Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="IMGLpH7XxSAsTk4J6p4m" version="20.5.0" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="1423" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -88,7 +88,7 @@
           <mxGeometry x="590" y="1230" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-111" value="vue.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry x="400" y="900" width="980" height="270" as="geometry" />
+          <mxGeometry x="397" y="820" width="1043" height="350" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-113" value="vue-router" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
           <mxGeometry x="10" y="142" width="100" height="40" as="geometry" />
@@ -112,7 +112,7 @@
           <mxGeometry x="10" y="130" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-253" value="pc端组件" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;opacity=40;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="850" y="34" width="110" height="226" as="geometry" />
+          <mxGeometry x="850" y="34" width="130" height="226" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-228" value="bootstrap-due" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-253">
           <mxGeometry x="5" y="30" width="100" height="40" as="geometry" />
@@ -121,7 +121,7 @@
           <mxGeometry x="5" y="80" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-257" value="ant design of vue" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-253">
-          <mxGeometry x="5" y="126" width="100" height="40" as="geometry" />
+          <mxGeometry x="5" y="126" width="125" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-258" value="fast" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-253">
           <mxGeometry x="5" y="176" width="100" height="40" as="geometry" />
@@ -142,7 +142,7 @@
           <mxGeometry x="10" y="31" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-261" value="模板" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;opacity=40;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
-          <mxGeometry x="244" y="35" width="167" height="200" as="geometry" />
+          <mxGeometry x="248" y="35" width="167" height="135" as="geometry" />
         </mxCell>
         <mxCell id="-jn-j5KkJefASaCqUATf-262" value="vue-element-admin" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-261">
           <mxGeometry x="10" y="30" width="150" height="40" as="geometry" />
@@ -150,8 +150,11 @@
         <mxCell id="-jn-j5KkJefASaCqUATf-263" value="vue-ben-admin" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-261">
           <mxGeometry x="10" y="80" width="150" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-118" value="vuepress" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-5">
-          <mxGeometry x="820" y="1190" width="100" height="40" as="geometry" />
+        <mxCell id="-jn-j5KkJefASaCqUATf-264" value="静态站点生成" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;opacity=40;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
+          <mxGeometry x="116" y="37" width="123" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-jn-j5KkJefASaCqUATf-118" value="vuepress" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-264">
+          <mxGeometry x="13" y="35" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
