@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T18:23:52.377Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="_sJYCqJJi0JqDhc2jJmO" version="20.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-21T18:24:45.455Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="2R46XhSN3VY8JlOQAdxu" version="20.5.0" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="1210" dy="1108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -137,7 +137,7 @@
         <mxCell id="-jn-j5KkJefASaCqUATf-119" value="next.js" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-111">
           <mxGeometry x="140" y="192" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="-jn-j5KkJefASaCqUATf-120" value="Vertical Container" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
+        <mxCell id="-jn-j5KkJefASaCqUATf-120" value="react.js生态" style="swimlane;dashed=1;fontSize=15;fillColor=#D5E8D4;gradientColor=none;" vertex="1" parent="-jn-j5KkJefASaCqUATf-109">
           <mxGeometry x="300" y="35" width="230" height="235" as="geometry" />
         </mxCell>
       </root>
