@@ -9,7 +9,7 @@ export default defineUserConfig({
     base: '/',//部署站点的基础路径
     head: [['link', { rel: 'icon', href: 'clxbx6O5YYXPaOb.png' }]],
     lang: 'zh-CN',
-    title: '理解最可怕的邪恶，难免要撕去虚假正义的薄薄糖衣。',
+    title: '你好',
     description: '我就想不通了 !',
     //插件项配置
     plugins: [
