@@ -39,3 +39,9 @@ Conda install 包名称
 或者pip install 包名称 -i https://pypi.tuna.tsinghua.edu.cn/simple（清华镜像）
 或者pip install 包名称 -i  https://pypi.doubanio.com/simple/ （豆瓣镜像）
 ```
+
+
+
+#  关于conda配置镜像源后https报错 
+
+把镜像链接中的https改成http
