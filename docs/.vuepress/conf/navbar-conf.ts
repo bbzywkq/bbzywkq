@@ -1,26 +1,8 @@
 import 检索 from "./检索"
-import 前端 from "./前端"
-import java from "./java"
-import python from "./python"
-import learning from "./learning"
-import 技术站点 from "./技术站点"
-import 工具 from "./工具"
-import 平台 from "./平台"
-import 文档 from "./文档"
-import 博客_建站 from "./博客_建站"
 
 //导航栏配置
 const navbar = [
     检索,
-    前端,
-    java,
-    python,
-    learning,
-    技术站点,
-    工具,
-    平台,
-    文档,
-    博客_建站,
     
     // NavbarGroup
     // {

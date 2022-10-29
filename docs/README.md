@@ -22,7 +22,7 @@ actions:
 #   - title: 高性能
 #     details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。          
 #首页页角
-footer: '@wangkeqiang'
+footer: '@wangkeqiang <a href="https://v2.vuepress.vuejs.org/" target="view_window">Powered by VuePress</a>'
 #是否允许页脚中使用 HTML
-footerHtml: false
+footerHtml: true
 ---
