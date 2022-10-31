@@ -18,7 +18,115 @@ fc-cache -fv
 find ./ -name '<prefix>*' -exec rm {} \;
 ```
 
+### du/df文件命令
+
+**显示当前目录下所有一级子目录的大小：**
+
+```
+du -h --max-depth=1
+```
+
+**显示当前目录的总大小：**
+
+```
+du -sh
+```
+
+**显示当前目录下所有子目录的大小，递进到最大深度：**
+
+```
+du -h
+```
+
+**df -h** 命令查看整体磁盘使用情况
+
+使用 **du -ah --max-depth=1**  /    可以查看根目录下各个文件占用情况
+
+**du -h –max-depth=1 /var/log/\*** 查看/var/log路径下文件的大小
+
+**du -sh /\*** 查看哪个目录最大，一步一步的查找大文件
+
+ **du -bsh /\*\*\*/** 命令 查看某个目录
+
+用find 命令找到当前目录大于500M文件   **find . -size +500M** 
+
+查找跟目录下大于10M的文件 **find / -type f -size +10000000c -exec du -sh {} \\;**
+
+#### **du**常用的选项：
+
+​       -h：以人类可读的方式显示
+　　-a：显示目录占用的磁盘空间大小，还要显示其下目录和文件占用磁盘空间的大小
+　　-s：显示目录占用的磁盘空间大小，不要显示其下子目录和文件占用的磁盘空间大小
+　　-c：显示几个目录或文件占用的磁盘空间大小，还要统计它们的总和
+　　--apparent-size：显示目录或文件自身的大小
+　　-l ：统计硬链接占用磁盘空间的大小
+　　-L：统计符号链接所指向的文件占用的磁盘空间大小
+
+**du -sh** : 查看当前目录总共占的容量。而不单独列出各子项占用的容量 
+
+**du -lh --max-depth=1** : 查看当前目录下一级子文件和子目录占用的磁盘容量。
+
+**lsof -n | grep deleted**  (查看删除占用)
+
+### scp
+
+对拷文件夹 (包括文件夹本身)
+
+```
+scp -r   /home/wwwroot/www/charts/util root@192.168.1.65:/home/wwwroot/limesurvey_back/scp
+```
+
+对拷文件夹下所有文件 (不包括文件夹本身)
+
+```
+scp   /home/wwwroot/www/charts/util/* root@192.168.1.65:/home/wwwroot/limesurvey_back/scp
+```
+
+对拷文件并重命名
+
+```
+scp   /home/wwwroot/www/charts/util/a.txt root@192.168.1.65:/home/wwwroot/limesurvey_back/scp/b.text
+```
+
+把本地 /var/log/sql-slow-queries.log 这个文件copy到1.50上面/root 目录下面
+
+```
+scp /var/log/sql-slow-queries.log root@192.168.1.50:/root
+```
+
+一、将本机文件复制到远程服务器上
+　　#scp /home/administrator/news.txt [root@192.168.6.129](mailto:root@192.168.6.129):/etc/squid
+　　/home/administrator/ 本地文件的绝对路径
+　　news.txt 要复制到服务器上的本地文件
+　　root 通过root用户登录到远程服务器（也可以使用其他拥有同等权限的用户）
+　　192.168.6.129 远程服务器的ip地址（也可以使用域名或机器名）
+　　/etc/squid 将本地文件复制到位于远程服务器上的路径
+二、将远程服务器上的文件复制到本机
+　　#scp [remote@www.abc.com](mailto:remote@www.abc.com):/usr/local/sin.sh /home/administrator
+　　remote 通过remote用户登录到远程服务器（也可以使用其他拥有同等权限的用户）
+　　[www.abc.com](http://www.abc.com/) 远程服务器的域名（当然也可以使用该服务器ip地址）
+　　/usr/local/sin.sh 欲复制到本机的位于远程服务器上的文件
+　　/home/administrator 将远程文件复制到本地的绝对路径
+注意两点：
+　　1.如果远程服务器防火墙有特殊限制，scp便要走特殊端口，具体用什么端口视情况而定，命令格式如下：
+　　#scp -p 4588 [remote@www.abc.com](mailto:remote@www.abc.com):/usr/local/sin.sh /home/administrator
+　　2.使用scp要注意所使用的用户是否具有可读取远程服务器相应文件的权限。
+　　如：
+
 ## git
+
+### docker容器化部署
+
+```
+docker run -d --name gitlab2 --restart always \
+    -p 19443:443 -p 19080:80 -p 19022:22 \
+    -v /path/to/conf:/etc/gitlab \
+    -v /path/to/logs:/var/log/gitlab \
+    -v /path/to/data:/var/opt/gitlab \
+    033bcfa1b036
+```
+
+
 
 ### gitlab备份恢复迁移
 
@@ -121,7 +229,194 @@ merge=ours, 一个文件占一行 例：
 config.xml merge=ours
 ```
 
+### git远程仓库地址更改
 
+查看当前的远程关联的仓库  **git remote -v**
+
+配置新的远程仓库地址 `git remote set-url origin {git url}`
+
+确认  `git remote -v`
+
+### git fork
+
+```
+# 检测惯量的仓库
+git remote -v
+
+# 添加上游仓库地址
+git remote add upstream https://github.com/Nepxion/Discovery.git
+
+# 再次检测惯量
+git remote -v
+
+# 检测状态
+git status
+
+# 拉去上游代码
+git pull upstream info
+```
+
+### git 分支操作
+
+创建及切换分支
+
+```
+git chekcout -b dev
+```
+
+```
+git push origin dev:dev
+```
+
+删除本地的bug\_xzx分支
+
+```
+git branch -d bug_xzx
+```
+
+删除远程的bug\_xzx分支
+
+```
+git push origin --delete bug_xzx
+```
+
+拉去远程分支
+
+```
+git fetch origin dev（dev为远程仓库的分支名）
+git checkout -b dev(本地分支名称) origin/dev(远程分支名称)
+git pull origin dev(远程分支名称)
+```
+
+
+
+### gitlab-runner
+
+#### docker容器化部署和使用
+
+```
+# 拉取镜像
+docker pull gitlab/gitlab-runner:latest
+
+# 创建挂载目录
+mkdir -p /opt/gitlab-runner/config
+
+# 启动容器
+docker run -d --name gitlab-runner --restart always -v /opt/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
+```
+
+**进入runner容器，注册到gitlab上**
+
+**汇总操作命令：**
+
+```
+docker exec -it gitlab-runner  gitlab-runner register -n \
+  --url http://192.168.0.253:8090 \
+  --registration-token tyXBwC8frbShS4yn3nE5 \ # token需要根据实际情况进行修改
+  --tag-list=dockersock,docker \
+  --description "dockersock" \
+  --docker-privileged=true \
+  --docker-pull-policy="if-not-present" \
+  --docker-image "docker:latest" \
+  --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
+  --docker-volumes /root/m2:/root/.m2 \
+  --executor docker 
+```
+
+**分步操作命令：**
+
+```
+# 进入容器
+docker exec -it gitlab-runner /bin/bash
+
+# 运行以下注册命令
+gitlab-runner register
+
+# 输入Gitlab实例的地址
+Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
+http://192.168.0.253:8090  # 端口采用默认的80，否则需要加上端口，比如 http://192.168.0.253:8090
+
+# 输入token
+Please enter the gitlab-ci token for this runner
+tyXBwC8frbShS4yn3nE5
+```
+
+**如何获取token**
+
+进入到项目中的设置，找到CI/CD，Runner ，图片这个token仅供途径展示
+
+![image](https://file.bbzy.online/blog/794174-20201014162037964-1798013442.png)
+
+```
+# 输入Runner的描述，后期可以手动修改
+Please enter the gitlab-ci description for this runner
+[hostname] my-runner
+
+# 输入与Runner关联的标签，后期可以手动修改
+Please enter the gitlab-ci tags for this runner (comma separated):
+my-tag
+
+# 输入Ruuner的执行者
+Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
+docker
+
+# 如果上面执行者为docker，需要你在后续项目根部的.gitlab-ci.yml中指定docker版本
+Please enter the Docker image (eg. ruby:2.1):
+alpine:latest
+```
+
+**通过以上命令后，就可以在gitlab中查看到了这个刚刚创建的runner**
+
+![image](https://file.bbzy.online/blog/794174-20201014162236794-1553131186.png)
+
+
+
+
+
+
+
+**runner注册完毕之后，还需要修改一下runner的配置文件，实现runner与宿主机的数据挂载:**
+
+```
+vim /opt/gitlab-runner/config/config.toml # 开头创建的宿主机挂载目录
+
+concurrent = 1
+check_interval = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "my-runner"
+  url = "http://192.168.0.253:8090"
+  token = "tyXBwC8frbShS4yn3nE5"
+  executor = "docker"
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+  [runners.docker]
+    tls_verify = false
+    image = "alpine:latest"
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache","/var/run/docker.sock:/var/run/docker.sock"]
+    shm_size = 0
+
+```
+
+原先是volumes = \["/cache"\]上面的volumes数组中添加docker的挂载，加快项目的构建速度。
+
+最后，只需要再重启runner容器即可:
+
+docker restart gitlab-runner
+
+**说明：**
+1.不同的项目可以使用不同的gitlab-runner，根据实际情况再运行一个名称不一样的容器，并根据新项目的token注册就行了。
+2.不同的项目还可以使用同一个gitlab-runner，只需要在注册的时候使用不同项目下的token就行了。
 
 ## mysql
 
@@ -518,6 +813,16 @@ read:读取jar包详细信息
 ### 打包命令
 
 ```
+package命令完成了项目编译、单元测试、打包功能，但没有把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库
+
+install命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库，但没有布署到远程maven私服仓库
+
+deploy命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库
+```
+
+
+
+```
 mvn clean install   -T 1C -Dmaven.test.skip=true -Dmaven.compile.fork=true -U -pl  子项目名称 -am (am打入相关依赖包)
 多模块工程的打包命令参考：
 ```
@@ -535,7 +840,177 @@ mvn clean install   -T 1C -Dmaven.test.skip=true -Dmaven.compile.fork=true -U -p
 
 -rf,--resume-from  Resume reactor from specified project
 
+
+
+### nexus3使用
+
+**项目使用nexus私服的jar包，在项目的pom.xml文件中指定私服仓库**
+
+```
+<repositories>
+    <repository>
+        <id>nexus</id>
+        <name>nexus</name>
+        <url>http://192.168.1.103:8081/nexus/content/groups/public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+```
+
+**项目使用nexus私服的插件，在项目的pom.xml文件中指定插件仓库**
+
+```
+<pluginRepositories>
+    <pluginRepository>
+        <id>nexus</id>
+        <name>nexus</name>
+        <url>http://192.168.1.103:8081/nexus/content/groups/public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
+```
+
+**如果想本机所有的maven项目都使用私服的组件，可以在maven的设置文件settings.xml中添加属性，并激活**
+
+```
+<profiles>
+    <profile>
+        <id>nexusProfile</id>
+        <repositories>
+            <repository>
+                <id>nexus</id>
+                <name>nexus</name>
+                <url>http://192.168.1.103:8081/nexus/content/groups/public/</url>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+            </repository>
+        </repositories>
+    </profile>
+</profiles>
+<!-- 激活 -->
+<activeProfiles>
+    <activeProfile>nexusProfile</activeProfile>
+</activeProfiles>
+```
+
+**项目发布到私服，maven项目使用命令：mvn clean deploy；需要在pom文件中配置一下代码；**
+
+```
+<distributionManagement>
+        <repository>
+            <id>user-release</id>
+            <name>User Project Release</name>
+            <url>http://192.168.1.103:8081/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>user-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>http://192.168.1.103:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+```
+
+**注意还需要配置mvn发布的权限，否则会报401错误，在settings.xml中配置权限，其中id要与pom文件中的id一致**
+
+```
+<server>
+    <id>user-release</id>
+    <username>admin</username>
+    <password>admin123</password>
+</server>
+<server>
+    <id>user-snapshots</id>
+    <username>admin</username>
+    <password>admin123</password>
+</server>
+```
+
+**上传第三方的jar包，选择3rd party–>Artifact Upload–> 选择GAV方式–>填好构建参数–>增加jar包–>上传，在Browse Storeage查看**
+
 ## docker
+
+### docker容器网络模式
+
+```
+–net选项指定容器的网络模式
+```
+
+#### host模式
+
+Docker使用的网络实际上和宿主机一样，在容器内看到的网卡ip是宿主机上的ip
+
+众所周知，Docker使用了Linux的Namespaces技术来进行资源隔离，如PID Namespace隔离进程，Mount Namespace隔离文件系统，Network Namespace隔离网络等。一个Network Namespace提供了一份独立的网络环境，包括网卡、路由、Iptable规则等都与其他的Network Namespace隔离。一个Docker容器一般会分配一个独立的Network Namespace。但如果启动容器的时候使用host模式，那么这个容器将不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。
+
+#### container模式
+
+多个容器使用共同的网络看到的ip是一样的
+
+在理解了host模式后，这个模式也就好理解了。这个模式指定新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。两个容器的进程可以通过lo网卡设备通信。
+
+#### none模式
+
+这种模式下不会配置任何网络。
+
+这个模式和前两个不同。在这种模式下，Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。也就是说，这个Docker容器没有网卡、IP、路由等信息。需要我们自己为Docker容器添加网卡、配置IP等。
+
+#### bridge模式
+
+bridge模式是Docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。
+
+类似于Vmware的nat网络模式。同一个宿主机上的所有容器会在同一个网段下，相互之间是可以通信的。
+
+### docker-compose
+
+新建docker-compose.yml配置文件
+
+```
+version: '2'
+services:
+  tomcat:
+    restart: always
+    image: tomcat
+    container_name: tomcat
+    ports:
+      - 30000:8080
+```
+
+**在配置同级目录下运行，或指定配置文件路径**
+
+```
+docker-compose -f /conf_path up -d  --后台守护启动
+docker-compose -f /conf_path up  --前台启动
+```
+
+**查看日志**
+
+```
+docker-compose logs tomcat
+```
+
+**停止**
+
+```
+docker-compose start  --启动
+docker-compose stop  --停止
+docker-compose dowm  --停止并移除
+```
+
+
 
 ### 启动命令
 
@@ -723,6 +1198,62 @@ docker tag percona/percona-xtradb-cluster:latest pxc
 
 ## ElasticSearch
 
+### docker容器化部署
+
+#### 镜像
+
+```
+docker pull elasticsearch:7.3.0
+```
+
+```
+docker run -d --name es -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -e "discovery.type=single-node" elasticsearch:7.3.0
+```
+
+```
+docker run --name es -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -e "discovery.type=single-node" elasticsearch:7.3.0
+```
+
+```
+docker run -d --name kibana --link=nervous_cohen:elasticsearch -p 5601:5601 kibana:7.3.0
+```
+
+#### 容器内目录
+
+```
+容器内目录
+```
+
+#### 重新挂在目录
+
+```
+docker volume create es_conf
+docker volume create es_data
+docker volume create es_plugins
+```
+
+#### 前台启动
+
+```
+docker run --name es -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -e "discovery.type=single-node" -v es_conf:/usr/share/elasticsearch/config -v es_data:/usr/share/elasticsearch/data -v es_plugins:/usr/share/elasticsearch/plugins  elasticsearch:7.3.0
+```
+
+#### 跨域配置
+
+```
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+# minimum_master_nodes need to be explicitly set when bound on a public IP
+# set to 1 to allow single node clusters
+# Details: https://github.com/elastic/elasticsearch/pull/17288
+discovery.zen.minimum_master_nodes: 1
+```
+
+
+
 ### 可视化终端 
 
 #### Dejavu [github](https://github.com/appbaseio/dejavu)
@@ -907,11 +1438,54 @@ PUT /_cluster/settings
 
 ## redis
 
+### redis-cli命令
+
+```
+./redis-cli -a 密码  -p 端口  -h ip  -c 已集群模式连接
+```
+
+
+
 ### 可视化终端
 
 #### AnotherRedisDesktopManager [github](https://github.com/qishibo/AnotherRedisDesktopManager)
 
 ## jenkins
+
+### docker容器化部署
+
+```
+docker pull jenkins/jenkins
+mkdir /home/jenkins_home 
+docker run -d --name jenkins -p 8082:8080 jenkins/jenkins
+docker run -d --name jenkins -p 9002:8080 -v jenkins:/var/jenkins_home jenkins/jenkins
+容器内目录;/var/jenkins_home/secrets/initialAdminPassword
+```
+
+#### 修改容器内maven镜像加速
+
+```
+/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/MAVEN_HOME/conf
+docker cp Jenkins_01:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/MAVEN_HOME/conf/settings.xml /home
+```
+
+```
+修改镜像地址：
+<mirror>
+    <id>aliyunmaven</id>
+    <mirrorOf>central</mirrorOf>
+    <name>aliyun maven</name>
+    <url>https://maven.aliyun.com/repository/public </url>
+</mirror>
+```
+
+```
+覆盖容器内文件
+
+docker cp /home/settings.xml Jenkins_01:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/MAVEN_HOME/conf/settings.xml
+```
+
+
 
 ### 前端项目构建
 
@@ -979,6 +1553,162 @@ npm run build
 
    
 
+### job复制脚本
+
+```
+import hudson.model.*
+    //源view
+    def str_view = "2手心美业测试环境"
+    //目标view
+    def str_new_view = "7美业生产-node-1"
+    //源job名称(模糊匹配)
+    def str_search = "test-"
+    //目标job名称(模糊匹配后替换)
+    def str_replace = "node1"
+    def view = Hudson.instance.getView(str_view)
+    //copy all projects of a view
+    for(item in view.getItems())
+    {
+      //create the new project name
+      newName = item.getName().replace(str_search, str_replace)
+      // copy the job, disable and save it
+      def job
+      try {
+          //因为第一次导入后报错，所以添加了try-catch 跳过已存在的job
+          job = Hudson.instance.copy(item, newName)
+      } catch(IllegalArgumentException e) {
+         println(e.toString())
+         println("$newName job is exists")
+         continue
+      } catch(Exception e) {
+        println(e.toString())
+        continue
+      }
+      job.disabled = true
+      job.save() 
+      // update the workspace to avoid having two projects point to the same location
+      AbstractProject project = job
+      def new_workspace = project.getCustomWorkspace().replace(str_search, str_replace)
+      project.setCustomWorkspace(new_workspace)
+      project.save()
+      //add job to view
+      Hudson.instance.getView(str_new_view).add(job)
+      println(" $item.name copied as $newName")
+    }
+```
+
+### 脚本类型备份
+
+**多模块项目部署脚本-jenkins端**
+
+```
+#!/bin/bash
+echo "工作空间 $WORKSPACE"
+echo "即将部署的项目信息 $project_names"
+mvn clean package -pl $project_names -am  -DskipTests
+echo "打包完成"
+#对IFS变量 进行替换处理
+OLD_IFS="$IFS"
+IFS=","
+array=($project_names)
+IFS="$OLD_IFS"
+echo "Begining build project with maven..."
+pfx="-1.jar"
+for var in ${array[@]}
+do
+scp $var/target/$var$pfx root@47.103.120.84:/var/shouxin
+echo "程序包传输完成"
+done
+```
+
+**多模块项目部署脚本-服务端**
+
+```
+﻿#!/bin/bash
+echo "应用发布中 $2"
+#进入项目发布目录 参数为1 需要发布的列表参数2
+cd $1
+#对IFS变量 进行替换处理
+echo "Begining build project with maven..."
+pfx="-1.jar"
+#对IFS变量 进行替换处理
+OLD_IFS="$IFS"
+IFS=","
+array=($2)
+IFS="$OLD_IFS"
+for var in ${array[@]}
+do
+pid=`ps -ef |grep $var$pfx | grep -v grep | awk '{print $2}'`
+if [ -n "$pid" ];then
+   kill -9 $pid
+   echo "$var$pfx端口进程终止成功"
+   else 
+   echo "没有检测到$var$pfx端口行为"
+ fi
+java -Xmx$3m -Xss$3m -jar $var$pfx >/var/log/3km_test/$var.out&
+#nohup java -Xmx$3m -Xss$3m -jar $var$pfx >/dev/null 2>&1 &
+sleep 25
+done
+```
+
+**前端项目**
+
+```
+#!/bin/bash
+echo "构建中----"
+#npm install
+#npm run build
+echo "构建完成--^0^不要急，正在传送源码---"
+#scp -r  $WORKSPACE/.nuxt root@47.103.120.84:/home/shouxin_pc_online/.nuxt
+#scp -r -l 5000 $WORKSPACE/static root@47.103.120.84:/home/shouxin_pc_online/static
+#scp -r -l 5000 $WORKSPACE/server root@47.103.120.84:/home/shouxin_pc_online/server
+#scp -r -l 5000 $WORKSPACE/nuxt.config.js root@47.103.120.84:/home/shouxin_pc_online
+#scp -r -l 5000 $WORKSPACE/package.json root@47.103.120.84:/home/shouxin_pc_online
+#scp -r -l 5000 $WORKSPACE/node_modules root@47.103.120.84:/home/shouxin_pc_online/node_modules
+scp -r -l 5000 $WORKSPACE/assets root@47.103.120.84:/home/shouxin_pc_online/node_modules/assets
+echo "--- 发布成功-----^^^^^^^^^^^^^^"
+```
+
+**服务端构架脚本-jar程序**
+
+```
+#! /bin/sh
+echo "movecomplate"
+cd /opt/3km$1
+pid=`ps -ef |grep $2.jar | grep -v grep | awk '{print $2}'`
+echo "检测到端口值---"$pid
+if [ -n "$pid" ];then
+   kill -9 $pid
+   echo "$2端口进程终止成功"
+   nohup java -Xmx$3m -Xss$3m -jar $2.jar  >/dev/null 2>&1 &
+    echo "RESTART--SUCCESS"
+   else 
+   echo "没有检测到$2端口行为"
+   #java -Xmx$3m -Xss$3m -jar $2.jar >/var/log/shouxin-log/$2.out&
+   nohup java -Xmx$3m -Xss$3m -jar $2.jar  >/dev/null 2>&1 &
+   echo "START--SUCCESS"
+ fi
+echo "END"
+```
+
+**服务端构建-前段项目**
+
+```
+#!/bin/bash
+#your_name="bbzy" 
+#echo $your_name
+#your_name="123"
+#echo $your_name
+#echo ${your_name}
+
+
+echo "添加权限"
+chmod -R 777 $1
+echo "添加权限-成功"
+```
+
+
+
 ## Nginx
 
 ### 基于网关的负载均衡
@@ -1012,11 +1742,168 @@ server {
     }
 ```
 
+### nginx reload 与 restart 的区别
+
+reload --重新加载，reload会重新加载配置文件，Nginx服务不会中断。而且reload时会测试conf语法等，如果出错会rollback用上一次正确配置文件保持正常运行。
+
+restart --重启（先stop后start），会重启Nginx服务。这个重启会造成服务一瞬间的中断，如果配置文件出错会导致服务启动失败，那就是更长时间的服务中断了。
+所以，如果是线上的服务，修改的配置文件一定要备份。为了保证线上服务高可用，最好使用reload。
+
+**reload  实现过程**
+
+![image](https://file.bbzy.online/blog/1368870-20200103170923856-1363899594.png)
+
+reload 只是重新加载配置文件，不会清理nginx 的一些缓存，在有些需要清理缓存的场景需要restart ，例如upstream 后端配置的集群服务地址是域名而不是ip，当后端IP 变了，就需要清除该域名的解析缓存，此时需要重启而不是reload。
+
+### 常用经典配置
+
+**二级目录映射 目前前后端项目分离场景多了以后，一般是前端一个端口，后端一个端口。**
+
+如前端是[https://example.com/index.html，调用的接口是https://example.com:4433](https://example.com/index.html，调用的接口是https://example.com:4433)
+
+如此部署对于一些小项目未免有些麻烦，当然你在公网环境下也可以选择使用子域名、其他域名进行跨域访问。
+
+这里说的是同一个域名，同一个端口，让前后端同时进行访问服务。
+
+前端地址：[https://example.com/index.html](https://example.com/index.html)
+
+接口地址：[https://example.com/api/](
+
+这里先记录我已经测试通过的反向代理的方式，即不改变原本的server配置。直接通过反向代理将example.com/api 重定向到 example.com:4443/
+
+```
+location ^~ /api/ {
+    proxy_pass  https://example.com:4433/;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
+
+location段的^\~是代表某个字符作为开头匹配，这里就是以/api/作为开头进行匹配URL规则。
+
+这里不能写作~~，因为~~是正则匹配的意思，用了正则就不能再proxy\_pass段配置URI了，所谓URI就是4433端口后面的/。
+
+如果不写/，当访问example.com/api/index.php时，会代理到example.com:4433/api/index.php。并不能定位到后端的根路径，所以这里以/结束。
+
+非标准HTTPS端口重定向 如果想让你的非标准https端口，如2083支持HTTP跳转HTTPS访问，请参照如下配置。
+
+```
+error_page 497 https://$host:2083$request_uri;
+```
+
+如果不这么配置，默认当用户不确定网站协议时，采用了HTTP协议访问你的HTTPS网站就会出现无法访问。
+
+错误如：The plain HTTP request was sent to HTTPS port
+
+HTTP强制跳转HTTPS 日常为了保证访客安全性，我们常常需要让全站保持HTTPS访问，那么你可以通过以下配置。
+
+```
+server {
+    listen 80 default_server;
+    server_name example.com;
+    rewrite ^(.*) https://$server_name$1 permanent;
+    #上面的rewrite也可以写作
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name example.com;
+}
+```
+
+做法是，让80监听到的HTTP链接全部重定向到HTTPS端口中。
+
+端口转发 Nginx端口转发性能也非常强大，可以用于内网[数据库](https://cloud.tencent.com/solution/database?from=10680)、其他服务端口外露的场景。
+
+如将内网的192.168.1.2MySQL数据库端口通过Nginx所在服务器的33062端口进行外露。
+
+```
+upstream TCP3306 {
+    hash $remote_addr consistent;
+    server 192.168.1.2:3306;
+}
+
+server {
+    listen 33062;
+    proxy_connect_timeout 5s;
+    proxy_timeout 300s;
+    proxy_pass TCP3306;
+}
+```
+
+### socker支持配置
+
+```
+location  / { 
+        proxy_pass http://10.0.0.3:8702/;
+            proxy_http_version 1.1;
+            proxy_redirect off;
+            proxy_buffering off;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header Host $host;
+            proxy_set_header Http-Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+    }
+```
+
 
 
 ## MQ
 
 ### rabbitmq
+
+#### docker容器化部署
+
+```
+docker pull rabbitmq:3.7.24
+```
+
+##### 方式1–默认账户启动
+
+默认guest 用户，密码也是 guest
+
+```
+docker run -d --hostname my-rabbit --name mq -p 15672:15672 -p 5672:5672 rabbitmq:3.7.24
+```
+
+##### 方式2–指定账户启动
+
+```
+docker run -d --hostname my-rabbit --name rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password -p 15672:15672 -p 5672:5672 rabbitmq:management
+```
+
+#### 安装插件
+
+```
+docker cp /root/rabbitmq_delayed_message_exchange-3.8.0.ez mq:/opt/rabbitmq/plugins
+```
+
+#### 启动插件
+
+```
+rabbitmq-plugins enable rabbitmq_delayed_message_exchange
+```
+
+#### 查看插件列表
+
+```
+rabbitmq-plugins list
+```
+
+#### 启用web客户端
+
+```
+rabbitmq-plugins enable rabbitmq_management   # 启用插件
+service rabbitmq-server restart    # 重启
+
+通过 http://localhost:15672 查看，使用默认账户guest/guest 登录。 
+```
+
+
 
 #### 延时插件
 
@@ -1032,8 +1919,237 @@ server {
 rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 ```
 
+## python
+
+### 包管理工具Anaconda
+
+[官网地址](https://www.anaconda.com/)
+
+#### 基本命令
+
+**conda info**  查询 conda 信息
+
+**conda create -n 环境名 ** 创建环境
+
+**conda info --envs**  查看当前所有环境
+
+**conda activate <env_name>**  激活环境
+
+**conda list** 查看当前环境中的包
+
+**deactivate <env_name>** 推出当前环境
+
+**conda remove -n 环境名  --all** 删除指定环境
+
+**conda install <package_name>**  使用conda安装库
+
+**pip install <package_name>**  使用pip安装
 
 
 
+## java
 
-# 已整理至：资料.md
+### jabba环境管理工具
+
+[github](https://github.com/shyiko/jabba)
+
+**window安装命令  在powershell上执行下面命令**
+
+```
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-Expression (
+  Invoke-WebRequest https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
+).Content
+```
+
+**如果执行上面命令报错，可能是win10脚本执行策略问题，修改可以执行下边命令：**
+
+```
+Set-ExecutionPolicy -Scope CurrentUser
+```
+
+**执行后会出`“ExecutionPolicy:”`提示信息，输入`RemoteSigned`，回车确定后在按`Y`确定执行。**
+
+**验证是否安装成功**
+
+```
+在powershell上执行下面命令
+
+jabba --version
+```
+
+**注意 此工具需要在powershell上执行工作命令**
+
+**[执行jabba ls-remote 后 raw.githubusercontent.com](https://raw.githubusercontent.com/) 域名报错问题**
+
+执行以下命令
+
+```
+$Env:http_proxy="http://127.0.0.1:10809";$Env:https_proxy="http://127.0.0.1:10809"
+```
+
+#### 命令
+
+**安装 Oracle JDK**
+
+jabba install 1.8
+
+**从自己指定url安装**
+
+```
+jabba install 1.8.0-custom=tgz+
+tgz+  =  http://example.com/distribution.tar.gz
+```
+
+**将系统中已安装的JDK链接到jabba中**
+
+```
+jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
+```
+
+**切换使用的JDK版本**
+
+1. 通过命令切换
+
+   jabba use adopt@1.8
+   jabba use zulu@~1.6.97
+
+2. 通过配置文件切换
+
+   echo "1.8" > .jabbarc
+
+3. 通过jabba  alias切换
+
+   jabba alias default 1.8   这个命令是每次打开一个新终端，就会自动地 jabba use 这个版本
+
+### JDK工具 keytool生成JKS密钥库
+
+```
+keytool -genkey -alias mymedical -keyalg RSA -keypass 123456 -keystore C:\Users\wkq\Desktop\mymedical.jks -storepass 123456
+```
+
+```
+-genkey 生成密钥
+
+-alias 别名
+
+-keyalg 密钥算法
+
+-keypass 密钥口令
+
+-keystore 生成密钥库的存储路径和名称
+
+-storepass 密钥库口令
+```
+
+
+
+## mac
+
+### 终端环境切换
+
+```
+chsh -s /bin/bash
+```
+
+```
+chsh -s /bin/zsh
+```
+
+### NPM
+
+#### 镜像配置
+
+**修改成腾讯云镜像源**
+
+1、命令
+
+npm config set registry http://mirrors.cloud.tencent.com/npm/
+
+2\. 验证命令
+
+npm config get registry
+
+如果返回http://mirrors.cloud.tencent.com/npm/，说明镜像配置成功。
+
+**修改成淘宝镜像源**
+
+1\. 命令
+
+npm config set registry https://registry.npmmirror.com
+
+2\. 验证命令
+
+npm config get registry
+
+如果返回https://registry.npmmirror.com，说明镜像配置成功。
+
+**修改成华为云镜像源**
+
+1\. 命令
+
+npm config set registry https://mirrors.huaweicloud.com/repository/npm/
+
+2\. 验证命令
+
+npm config get registry
+
+如果返回https://mirrors.huaweicloud.com/repository/npm/，说明镜像配置成功。
+
+**通过使用淘宝定制的cnpm安装**
+
+1\. 安装cnpm
+
+npm install -g cnpm --registry=https://registry.npmmirror.com
+
+2\. 使用cnpm
+
+cnpm install xxx
+
+## nuxt
+
+### 基于pm2的部署
+
+```
+pm2 start npm –name ‘pc-nuxt’ – run start将nuxt项目跑在了pm2上，并且命名为 pc-nuxt；
+```
+
+```
+用法
+$ npm install pm2 -g     # 命令行安装 pm2
+$ pm2 start app.js -i 4 #后台运行pm2，启动4个app.js
+                                # 也可以把'max' 参数传递给 start
+                                # 正确的进程数目依赖于Cpu的核心数目
+$ pm2 start app.js --name my-api # 命名进程
+$ pm2 list               # 显示所有进程状态
+$ pm2 monit              # 监视所有进程
+$ pm2 logs               #  显示所有进程日志
+$ pm2 stop all           # 停止所有进程
+$ pm2 restart all        # 重启所有进程
+$ pm2 reload all         # 0秒停机重载进程 (用于 NETWORKED 进程)
+$ pm2 stop 0             # 停止指定的进程
+$ pm2 restart 0          # 重启指定的进程
+$ pm2 startup            # 产生 init 脚本 保持进程活着
+$ pm2 web                # 运行健壮的 computer API endpoint
+$ pm2 delete 0           # 杀死指定的进程
+$ pm2 delete all         # 杀死全部进程
+```
+
+安装
+
+```
+sudo apt-get install -y nodejs-legacy
+sudo apt-get install -y npm
+```
+
+## nvm
+
+[github](https://github.com/coreybutler/nvm-windows)
+
+**基本命令**
+
+| nvm install latest | 安装最新版本的 nodejs |
+| ------------------ | --------------------- |
+| nvm use 版本号     | 使用指定版本的node    |
+| nvm install 版本号 | 安装指定版本的node    |
+| nvm ls-remote      | 查看远程版本号        |
