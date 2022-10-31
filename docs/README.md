@@ -1,9 +1,9 @@
 ---
 home: true
 #首页图片
-heroImage: /images/bulldog-7476727_1920.jpg
+heroImage: https://file.bbzy.online/blog/bulldog-7476727_1920.jpg
 #首页图片夜间模式
-heroImageDark: /images/bulldog-7476727_1920.jpg
+heroImageDark: https://file.bbzy.online/blog/bulldog-7476727_1920.jpg
 #首页大标题
 heroText: bbzywkq
 #首页标语-如果不设置，则默认使用站点 description 
