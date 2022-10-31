@@ -10,9 +10,9 @@ heroText: bbzywkq
 #tagline: 理解最可怕的邪恶，难免要撕去虚假正义的薄薄糖衣。
 #首页按钮
 actions:
-  - text: vue生态
-    link: /vue生态/
-    type: primary
+  - text: 导航
+    link: /nav/
+    type: primary    
 #首页特性列表    
 # features:
 #   - title: 简洁至上
