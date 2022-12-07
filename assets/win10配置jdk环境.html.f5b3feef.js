@@ -1,0 +1,5 @@
+import{_ as e,o as i,c as n,a}from"./app.234ff118.js";const d={},l=a(`<h1 id="win10\u914D\u7F6Ejdk\u73AF\u5883" tabindex="-1"><a class="header-anchor" href="#win10\u914D\u7F6Ejdk\u73AF\u5883" aria-hidden="true">#</a> win10\u914D\u7F6Ejdk\u73AF\u5883</h1><p>\u65B0\u5EFA JAVA_HOME</p><p>\u65B0\u5EFA CLASSPATH</p><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>\u7F16\u8F91 Path</p><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>Path
+%JAVA_HOME%\\bin
+%JAVA_HOME%\\jre\\bin
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,6),s=[l];function r(c,t){return i(),n("div",null,s)}const _=e(d,[["render",r],["__file","win10\u914D\u7F6Ejdk\u73AF\u5883.html.vue"]]);export{_ as default};

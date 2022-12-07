@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.51">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="clxbx6O5YYXPaOb.png"><title>支付宝与微信二码合一,扫码支付(学习笔记) | what`s next</title><meta name="description" content="我就想不通了 !">
+    <link rel="modulepreload" href="/assets/app.234ff118.js"><link rel="modulepreload" href="/assets/支付宝与微信二码合一_扫码支付(学习笔记).html.085369a7.js"><link rel="modulepreload" href="/assets/支付宝与微信二码合一_扫码支付(学习笔记).html.3f09e65f.js"><link rel="prefetch" href="/assets/index.html.99930f3d.js"><link rel="prefetch" href="/assets/nav.html.086e72f1.js"><link rel="prefetch" href="/assets/演示.html.9859b11a.js"><link rel="prefetch" href="/assets/资源汇总.html.df1972c3.js"><link rel="prefetch" href="/assets/基础.html.d13aa4b0.js"><link rel="prefetch" href="/assets/index.html.7ec162bb.js"><link rel="prefetch" href="/assets/IdeaLearningProject.html.79375511.js"><link rel="prefetch" href="/assets/index.html.7f50e53e.js"><link rel="prefetch" href="/assets/index.html.02ffbeec.js"><link rel="prefetch" href="/assets/index.html.06fec41d.js"><link rel="prefetch" href="/assets/index.html.31d4578b.js"><link rel="prefetch" href="/assets/index.html.38f43525.js"><link rel="prefetch" href="/assets/index.html.8258088c.js"><link rel="prefetch" href="/assets/index.html.a7bec9ae.js"><link rel="prefetch" href="/assets/0_点积.html.de28cf2c.js"><link rel="prefetch" href="/assets/index.html.cd6a45ef.js"><link rel="prefetch" href="/assets/index.html.b91b3f9e.js"><link rel="prefetch" href="/assets/Css.html.b5de4d59.js"><link rel="prefetch" href="/assets/Flex弹性盒子布局.html.90401744.js"><link rel="prefetch" href="/assets/JDK8新特性.html.bf5f92de.js"><link rel="prefetch" href="/assets/LPG日志收集及展示系统.html.d3275eac.js"><link rel="prefetch" href="/assets/LPG运维说明.html.e2d6e29a.js"><link rel="prefetch" href="/assets/MP or查询问题.html.0a34819e.js"><link rel="prefetch" href="/assets/OKR解析.html.268998d3.js"><link rel="prefetch" href="/assets/Pull Request.html.4263b7e8.js"><link rel="prefetch" href="/assets/Python循环结构用法 - 骏马金龙 - 博客园.html.f4a9b2f5.js"><link rel="prefetch" href="/assets/RBAC权限模型.html.3fd7e22d.js"><link rel="prefetch" href="/assets/index.html.49062da0.js"><link rel="prefetch" href="/assets/Sentinel.html.88a9cf08.js"><link rel="prefetch" href="/assets/Springboot项目 基于gitlab runner 实现CI CD教程_Honins的博客.html.eeef960a.js"><link rel="prefetch" href="/assets/VScode 常用插件.html.aa43a243.js"><link rel="prefetch" href="/assets/apt安装.html.05421bef.js"><link rel="prefetch" href="/assets/docker资料.html.e03829bd.js"><link rel="prefetch" href="/assets/dubbo实践记录网址.html.ad07e0ec.js"><link rel="prefetch" href="/assets/elk资料.html.5477a857.js"><link rel="prefetch" href="/assets/github初始化存储库.html.37e0a215.js"><link rel="prefetch" href="/assets/jaeger容器化部署.html.7e80ec8b.js"><link rel="prefetch" href="/assets/java泛型.html.d63c8851.js"><link rel="prefetch" href="/assets/jenkins资料.html.d6685eb9.js"><link rel="prefetch" href="/assets/kubernetes资料网址.html.a8d641cb.js"><link rel="prefetch" href="/assets/mybatis association再嵌套association使用问题.html.f0348ffd.js"><link rel="prefetch" href="/assets/mysql账户权限丢失问题.html.00130fca.js"><link rel="prefetch" href="/assets/mysql资料.html.54dc5d81.js"><link rel="prefetch" href="/assets/nacos使用及配置.html.21c44d0e.js"><link rel="prefetch" href="/assets/nacos资料.html.c95b4829.js"><link rel="prefetch" href="/assets/nexus-maven资料.html.4d134326.js"><link rel="prefetch" href="/assets/nginx资料.html.e38748c8.js"><link rel="prefetch" href="/assets/sifari浏览器快捷键.html.215968a1.js"><link rel="prefetch" href="/assets/springcloud资料.html.dd134737.js"><link rel="prefetch" href="/assets/win10配置jdk环境.html.d595267d.js"><link rel="prefetch" href="/assets/win10配置maven环境变量.html.cbf0a37f.js"><link rel="prefetch" href="/assets/win10配置免回环网络验证.html.2e5da472.js"><link rel="prefetch" href="/assets/win10键盘快捷方式.html.8034f88c.js"><link rel="prefetch" href="/assets/yarn.html.9db43697.js"><link rel="prefetch" href="/assets/yum 更新.html.77b29ce7.js"><link rel="prefetch" href="/assets/主从同步配置.html.757c20cb.js"><link rel="prefetch" href="/assets/主机监控项说明.html.e4110447.js"><link rel="prefetch" href="/assets/从服务器基础环境配置到搭建Docker_Gitlab_Gitlab Runner，完整介绍Spring Boot项目的持续集成与持续交付具体实现！   航行学园.html.1f3cc893.js"><link rel="prefetch" href="/assets/全局订阅式蓝绿灰度发布.html.5406b15f.js"><link rel="prefetch" href="/assets/全量配置.html.100cb5b2.js"><link rel="prefetch" href="/assets/全链路版本权重灰度发布.html.7987f6cc.js"><link rel="prefetch" href="/assets/全链路版本条件匹配蓝绿发布.html.775d06c8.js"><link rel="prefetch" href="/assets/全链路版本条件权重灰度发布.html.569b14a8.js"><link rel="prefetch" href="/assets/内网穿透.html.4d040872.js"><link rel="prefetch" href="/assets/分布式事务.html.c19090f3.js"><link rel="prefetch" href="/assets/分布式任务调度.html.48d21946.js"><link rel="prefetch" href="/assets/前端图形框架和游戏引擎.html.4c5f9371.js"><link rel="prefetch" href="/assets/史上最新最全的UI设计面试题汇总 - 知乎.html.bd33edae.js"><link rel="prefetch" href="/assets/启用停止同步.html.f035c6c0.js"><link rel="prefetch" href="/assets/如何发布自己的项目到中央仓库 - 掘金.html.e61c4c7b.js"><link rel="prefetch" href="/assets/密码配置.html.382d0da6.js"><link rel="prefetch" href="/assets/岗位理解.html.999961e1.js"><link rel="prefetch" href="/assets/服务器密码.html.41536f2b.js"><link rel="prefetch" href="/assets/注册Runner.html.220b2dcd.js"><link rel="prefetch" href="/assets/流程.html.4bd47e95.js"><link rel="prefetch" href="/assets/用 Substats 和 Shields.io 为你的个人主页定制动态数据小牌子 - 少数派.html.a1c66351.js"><link rel="prefetch" href="/assets/设计模式.html.79178b1e.js"><link rel="prefetch" href="/assets/证书文件处理.html.92a08a0c.js"><link rel="prefetch" href="/assets/资料.html.f89bdd3d.js"><link rel="prefetch" href="/assets/链接记录.html.8fe86862.js"><link rel="prefetch" href="/assets/集群配置.html.33d424a0.js"><link rel="prefetch" href="/assets/index.html.1d936bf3.js"><link rel="prefetch" href="/assets/index.html.edfac8c4.js"><link rel="prefetch" href="/assets/404.html.c3e557d0.js"><link rel="prefetch" href="/assets/index.html.11e72185.js"><link rel="prefetch" href="/assets/nav.html.5796b082.js"><link rel="prefetch" href="/assets/演示.html.fb25e431.js"><link rel="prefetch" href="/assets/资源汇总.html.4d4edfbc.js"><link rel="prefetch" href="/assets/基础.html.de30e7d3.js"><link rel="prefetch" href="/assets/index.html.4999aa5f.js"><link rel="prefetch" href="/assets/IdeaLearningProject.html.601b5c01.js"><link rel="prefetch" href="/assets/index.html.323b6064.js"><link rel="prefetch" href="/assets/index.html.23d9f2f9.js"><link rel="prefetch" href="/assets/index.html.0842748a.js"><link rel="prefetch" href="/assets/index.html.5febb307.js"><link rel="prefetch" href="/assets/index.html.51bba0ba.js"><link rel="prefetch" href="/assets/index.html.0e0bee64.js"><link rel="prefetch" href="/assets/index.html.77395f14.js"><link rel="prefetch" href="/assets/0_点积.html.098764d0.js"><link rel="prefetch" href="/assets/index.html.e5a945e5.js"><link rel="prefetch" href="/assets/index.html.29b1a632.js"><link rel="prefetch" href="/assets/Css.html.7a01d9a6.js"><link rel="prefetch" href="/assets/Flex弹性盒子布局.html.588bb471.js"><link rel="prefetch" href="/assets/JDK8新特性.html.32b48ac4.js"><link rel="prefetch" href="/assets/LPG日志收集及展示系统.html.57eb66f0.js"><link rel="prefetch" href="/assets/LPG运维说明.html.29c7cb35.js"><link rel="prefetch" href="/assets/MP or查询问题.html.0210709e.js"><link rel="prefetch" href="/assets/OKR解析.html.8d6db38b.js"><link rel="prefetch" href="/assets/Pull Request.html.55203edc.js"><link rel="prefetch" href="/assets/Python循环结构用法 - 骏马金龙 - 博客园.html.8b038a44.js"><link rel="prefetch" href="/assets/RBAC权限模型.html.ea5c9f29.js"><link rel="prefetch" href="/assets/index.html.a90e4919.js"><link rel="prefetch" href="/assets/Sentinel.html.9c8a828d.js"><link rel="prefetch" href="/assets/Springboot项目 基于gitlab runner 实现CI CD教程_Honins的博客.html.455860c3.js"><link rel="prefetch" href="/assets/VScode 常用插件.html.0c87a205.js"><link rel="prefetch" href="/assets/apt安装.html.5d5711a5.js"><link rel="prefetch" href="/assets/docker资料.html.0d83cd85.js"><link rel="prefetch" href="/assets/dubbo实践记录网址.html.cdc4c3d2.js"><link rel="prefetch" href="/assets/elk资料.html.23e2db8e.js"><link rel="prefetch" href="/assets/github初始化存储库.html.6578cfdb.js"><link rel="prefetch" href="/assets/jaeger容器化部署.html.7f7ed6f7.js"><link rel="prefetch" href="/assets/java泛型.html.d121210a.js"><link rel="prefetch" href="/assets/jenkins资料.html.c8b1b503.js"><link rel="prefetch" href="/assets/kubernetes资料网址.html.cfb88266.js"><link rel="prefetch" href="/assets/mybatis association再嵌套association使用问题.html.962eff69.js"><link rel="prefetch" href="/assets/mysql账户权限丢失问题.html.35e5d851.js"><link rel="prefetch" href="/assets/mysql资料.html.92503fd1.js"><link rel="prefetch" href="/assets/nacos使用及配置.html.57df790f.js"><link rel="prefetch" href="/assets/nacos资料.html.fdfb8b26.js"><link rel="prefetch" href="/assets/nexus-maven资料.html.967199c3.js"><link rel="prefetch" href="/assets/nginx资料.html.a0b658d0.js"><link rel="prefetch" href="/assets/sifari浏览器快捷键.html.3fa0749e.js"><link rel="prefetch" href="/assets/springcloud资料.html.f4158083.js"><link rel="prefetch" href="/assets/win10配置jdk环境.html.f5b3feef.js"><link rel="prefetch" href="/assets/win10配置maven环境变量.html.2a577416.js"><link rel="prefetch" href="/assets/win10配置免回环网络验证.html.62d7ac9f.js"><link rel="prefetch" href="/assets/win10键盘快捷方式.html.2b77c83c.js"><link rel="prefetch" href="/assets/yarn.html.1c0b2711.js"><link rel="prefetch" href="/assets/yum 更新.html.b7655a9b.js"><link rel="prefetch" href="/assets/主从同步配置.html.926eab88.js"><link rel="prefetch" href="/assets/主机监控项说明.html.266dc680.js"><link rel="prefetch" href="/assets/从服务器基础环境配置到搭建Docker_Gitlab_Gitlab Runner，完整介绍Spring Boot项目的持续集成与持续交付具体实现！   航行学园.html.38209853.js"><link rel="prefetch" href="/assets/全局订阅式蓝绿灰度发布.html.2554a015.js"><link rel="prefetch" href="/assets/全量配置.html.1af1d512.js"><link rel="prefetch" href="/assets/全链路版本权重灰度发布.html.dddc0598.js"><link rel="prefetch" href="/assets/全链路版本条件匹配蓝绿发布.html.ade99ae5.js"><link rel="prefetch" href="/assets/全链路版本条件权重灰度发布.html.724897f0.js"><link rel="prefetch" href="/assets/内网穿透.html.988a57ef.js"><link rel="prefetch" href="/assets/分布式事务.html.58f26960.js"><link rel="prefetch" href="/assets/分布式任务调度.html.c1d4dcec.js"><link rel="prefetch" href="/assets/前端图形框架和游戏引擎.html.8419bcc5.js"><link rel="prefetch" href="/assets/史上最新最全的UI设计面试题汇总 - 知乎.html.c239f669.js"><link rel="prefetch" href="/assets/启用停止同步.html.cf29ddcd.js"><link rel="prefetch" href="/assets/如何发布自己的项目到中央仓库 - 掘金.html.ed89250f.js"><link rel="prefetch" href="/assets/密码配置.html.23d1ab0b.js"><link rel="prefetch" href="/assets/岗位理解.html.7649da79.js"><link rel="prefetch" href="/assets/服务器密码.html.b9047177.js"><link rel="prefetch" href="/assets/注册Runner.html.76d75eff.js"><link rel="prefetch" href="/assets/流程.html.88953993.js"><link rel="prefetch" href="/assets/用 Substats 和 Shields.io 为你的个人主页定制动态数据小牌子 - 少数派.html.831e916e.js"><link rel="prefetch" href="/assets/设计模式.html.91d272a0.js"><link rel="prefetch" href="/assets/证书文件处理.html.01138281.js"><link rel="prefetch" href="/assets/资料.html.ebb2b949.js"><link rel="prefetch" href="/assets/链接记录.html.1e8f9a98.js"><link rel="prefetch" href="/assets/集群配置.html.7245a665.js"><link rel="prefetch" href="/assets/index.html.d3b6d760.js"><link rel="prefetch" href="/assets/index.html.ae115c03.js"><link rel="prefetch" href="/assets/404.html.fc539429.js">
+    <link rel="stylesheet" href="/assets/style.96ee71b5.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name can-hide">what`s next</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="检索"><span class="title">检索</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="检索"><span class="title">检索</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="external-link" href="https://www.google.com" rel="noopener noreferrer" target="_blank" aria-label="google"><!--[--><!--]--> google <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a class="external-link" href="https://yandex.com/" rel="noopener noreferrer" target="_blank" aria-label="yandex"><!--[--><!--]--> yandex <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/bbzywkq/bbzywkq.github.io/tree/main/docs" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="检索"><span class="title">检索</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="检索"><span class="title">检索</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="external-link" href="https://www.google.com" rel="noopener noreferrer" target="_blank" aria-label="google"><!--[--><!--]--> google <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a class="external-link" href="https://yandex.com/" rel="noopener noreferrer" target="_blank" aria-label="yandex"><!--[--><!--]--> yandex <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/bbzywkq/bbzywkq.github.io/tree/main/docs" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">支付宝与微信二码合一,扫码支付(学习笔记) <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#_1-页面生成的二维码" class="router-link-active router-link-exact-active sidebar-item" aria-label="1:页面生成的二维码:"><!--[--><!--]--> 1:页面生成的二维码: <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#_2-后端接收参数判断是什么发起的支付方式" class="router-link-active router-link-exact-active sidebar-item" aria-label="2: 后端接收参数判断是什么发起的支付方式:"><!--[--><!--]--> 2: 后端接收参数判断是什么发起的支付方式: <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#支付宝手机网站支付方式-建议先看一次官网文档" class="router-link-active router-link-exact-active sidebar-item" aria-label="支付宝手机网站支付方式**:** (建议先看一次官网文档)"><!--[--><!--]--> 支付宝手机网站支付方式**:** (建议先看一次官网文档) <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#微信方式-建议先看一次官网文档-jsapi-公众号-方式-博客教材" class="router-link-active router-link-exact-active sidebar-item" aria-label="微信方式: (建议先看一次官网文档) -JSAPI(公众号)方式 博客教材"><!--[--><!--]--> 微信方式: (建议先看一次官网文档) -JSAPI(公众号)方式 博客教材 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类" class="router-link-active router-link-exact-active sidebar-item" aria-label="支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类:"><!--[--><!--]--> 支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类: <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/%E5%BE%85%E6%95%B4%E7%90%86/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8E%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%A0%81%E5%90%88%E4%B8%80,%E6%89%AB%E7%A0%81%E6%94%AF%E4%BB%98(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0).html#支付-支付宝或者微信-依赖" class="router-link-active router-link-exact-active sidebar-item" aria-label="支付(支付宝或者微信)依赖:"><!--[--><!--]--> 支付(支付宝或者微信)依赖: <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="支付宝与微信二码合一-扫码支付-学习笔记" tabindex="-1"><a class="header-anchor" href="#支付宝与微信二码合一-扫码支付-学习笔记" aria-hidden="true">#</a> 支付宝与微信二码合一,扫码支付(学习笔记)</h1><h1 id="支付宝与微信二码合一-扫码支付-学习笔记-1" tabindex="-1"><a class="header-anchor" href="#支付宝与微信二码合一-扫码支付-学习笔记-1" aria-hidden="true">#</a> <strong>支付宝与微信二码合一,扫码支付(学习笔记)</strong></h1><h3 id="_1-页面生成的二维码" tabindex="-1"><a class="header-anchor" href="#_1-页面生成的二维码" aria-hidden="true">#</a> <strong>1:页面生成的二维码:</strong></h3><blockquote><p>(页面生成的二维码(<strong>扫描二维码会向服务端的判断扫码类型的接口发送带参数请求!</strong>)</p></blockquote><blockquote><p>( 带上订单号和商品图片参数 例如: 生成二维码参数地址 <code>localhost:8080/common/qrcode?order=XX&amp;imgurl=xx</code>)</p></blockquote><h3 id="_2-后端接收参数判断是什么发起的支付方式" tabindex="-1"><a class="header-anchor" href="#_2-后端接收参数判断是什么发起的支付方式" aria-hidden="true">#</a> <strong>2: 后端接收参数判断是什么发起的支付方式:</strong></h3><blockquote><ul><li><strong>判断是什么发起请求的工具类(AgentUtils.java):</strong></li></ul></blockquote><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
+
+import eu.bitwalker.useragentutils.Browser;
+import eu.bitwalker.useragentutils.DeviceType;
+import eu.bitwalker.useragentutils.OperatingSystem;
+import eu.bitwalker.useragentutils.UserAgent;
+
+/**
+ * 客户端识别工具
+ */
+public class AgentUtils {
+    /**
+     * 获取客户端为 微信/支付宝
+     */
+    public static String getUserAgentWap(HttpServletRequest request) {
+        String agent = ((HttpServletRequest) request).getHeader(&quot;user-agent&quot;);
+        if (StringUtils.isNotBlank(agent)) {
+            agent = agent.toLowerCase();
+            if (agent.indexOf(&quot;micromessenger&quot;) &gt;= 0) {
+                return &quot;weixin&quot;;
+            } else if (agent.indexOf(&quot;alipayclient&quot;) &gt;= 0) {
+                return &quot;alipay&quot;;
+            } else {
+                return &quot;other&quot;;
+            }
+        }
+        return &quot;unknown&quot;;
+    }
+}
+12345678910111213141516171819202122232425262728293031
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><strong>控制层:</strong></li></ul><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>/**
+ * 扫码支付URL
+ */
+@Controller
+@RequestMapping(&quot;/common&quot;)
+public class CommonsController extends BaseController{
+    @RequestMapping(value=&quot;/qrcode&quot;,method=RequestMethod.GET)
+    public String scan(HttpServletRequest request,RedirectAttributes attr) {
+        String order = request.getParameter(&quot;order&quot;);
+        String imgurl = request.getParameter(&quot;imgurl&quot;);
+        String agent = AgentUtils.getUserAgentWap(request);
+        if (&quot;weixin&quot;.equals(agent)) {
+            //重定向发送微信服务端请求
+            return &quot;redirect:/weixin/getcode?imgurl=&quot; + imgurl + &quot;&amp;order=&quot; + order + &quot;&quot;;
+        } else if (&quot;alipay&quot;.equals(agent)) {
+            //重定向发起服务端支付宝(确定下单的接口/pay/confirmpay)
+            return &quot;redirect:/pay/confirmpay?imgurl=&quot; + imgurl + &quot;&amp;order=&quot; + order + &quot;&quot;;
+        }
+        return null;
+    }
+1234567891011121314151617181920
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="支付宝手机网站支付方式-建议先看一次官网文档" tabindex="-1"><a class="header-anchor" href="#支付宝手机网站支付方式-建议先看一次官网文档" aria-hidden="true">#</a> <strong>支付宝手机网站支付方式**</strong>:** (建议先看一次<a href="https://docs.open.alipay.com/203/105288/" target="_blank" rel="noopener noreferrer">官网文档<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>)</h3><blockquote><p>**要先去进行配置应用获取****应用App的ID(APP_ID)****,<strong>应用公钥(ALI_PUBLIC_KEY)</strong>,***<em><strong><strong>私钥(APP_PRIVATE_KEY)和支付宝公钥</strong></strong></em>***4个参数**</p></blockquote><h6 id="控制层controller" tabindex="-1"><a class="header-anchor" href="#控制层controller" aria-hidden="true">#</a> 控制层<code>Controller</code></h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>@Controller
+@RequestMapping(&quot;/pay&quot;)
+public class PayController {
+
+// 服务器异步通知页面api路径 需http://或者https://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+    public static String notify_url = &quot;http://商户绑定域名/alipay.wap.pay/notify_url&quot;;
+    // 跳转页面，买家支付成功后跳转的页面，仅当买家支付成功后跳转一次 需http://或者https://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问 商户可以自定义同步跳转地址
+    public static String return_url = &quot;http://商户绑定域名/alipay.wap.pay/return_url&quot;;
+
+    /**
+     * (重定向目标接口,    二选一,可以选择直接进行请求支付接口/orderpay进行支付)
+     * 先进到商品详情页面,让用户知道买的是什么,由用户点确定发起调用支付宝支付接口
+     * 确认支付界面 (使用的是更好的用户体验)
+     */
+    @RequestMapping(value = &quot;/confirmpay&quot;, method = RequestMethod.GET)
+    public String ConfirmPay(HttpServletRequest req, HttpServletResponse res,Model model) {
+        String imgurl = req.getParameter(&quot;imgurl&quot;);
+        String order = req.getParameter(&quot;order&quot;);
+        model.addAttribute(&quot;imgurl&quot;, imgurl);
+        model.addAttribute(&quot;order&quot;, order);
+        //返回confirmspays.jsp商品页面
+        return &quot;confirmspays&quot;;
+    }
+1234567891011121314151617181920212223
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="下单支付前的商品详情页面-jsp" tabindex="-1"><a class="header-anchor" href="#下单支付前的商品详情页面-jsp" aria-hidden="true">#</a> <strong>下单支付前的商品详情页面**</strong>.jsp****:**</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot;%&gt;
+&lt;%@ include file=&quot;/WEB-INF/views/include/taglib.jsp&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;%--jQuery--%&gt;
+&lt;script src=&quot;${ctxStatic}/common/js/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;title&gt;支付确认&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body, html {
+  height: 100%;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+.btn_style{
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 5%;
+    height: 50px;
+    background-color: #805f45;
+    color: white;
+    font-size: 16px;
+}
+&lt;/style&gt;
+&lt;div id=&quot;tz&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function submitData() {
+        $.ajax({
+            url : &quot;${ctx}/pay/orderpay&quot;,
+            data : {
+                &quot;urlSmallPicture&quot;: $(&quot;#imgurl&quot;).val(),
+                &quot;billNumber&quot;: $(&quot;#order&quot;).val()
+            },
+            type : &#39;post&#39;,
+            dataType : &#39;json&#39;,
+            success : function(data) {
+                if(data.return_code == &#39;success&#39;){
+                    //把响应的确定支付表单显示到div中
+                    $(&quot;#tz&quot;).html(data.return_data);
+                }
+            },
+            error : function() {
+                console.log(&#39;request error!&#39;);
+            }
+        });
+    }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;imgurl&quot; id=&quot;imgurl&quot; value=&quot;${imgurl}&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;order&quot; id=&quot;order&quot; value=&quot;${order}&quot;&gt;
+    &lt;div style=&quot;width: 100%;margin-top: 100px;text-align: center;&quot;&gt;
+        &lt;img src=&quot;${imgurl}&quot; style=&quot;width: 200px;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button class=&quot;btn btn_style&quot; id=&quot;btnSubmit&quot; οnclick=&quot;submitData();&quot;&gt;确    认&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="支付宝下单支付接口" tabindex="-1"><a class="header-anchor" href="#支付宝下单支付接口" aria-hidden="true">#</a> <strong>支付宝下单支付接口:</strong></h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>    /**
+     * 订单统一下单支付
+     * @param req
+     * @param resp
+     * @return
+     */
+    @RequestMapping(value=&quot;/orderpay&quot;, method = RequestMethod.POST)
+    @ResponseBody
+    public Map&lt;String, Object&gt; orderpay(HttpServletRequest req, HttpServletResponse resp)  throws IOException, ParseException, AlipayApiException{
+        Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();
+        String order = req.getParameter(&quot;order&quot;);
+        //判断商户是否存在该订单和获取订单价格什么的(自行操作)
+        IdmOrder idmOrder = (IdmOrder)缓存Redis.getIdmOrderByBillNo(order);
+        ......
+        //创建阿里客户端对象
+        AlipayClient alipayClient = new DefaultAlipayClient(&quot;https://openapi.alipay.com/gateway.do&quot;, &quot;App的ID&quot;, &quot;应用私钥&quot;,&quot;json&quot;, &quot;字符集(UTF-8)&quot;, &quot;应用公钥&quot;, &quot;(签名类型例如:RSA2)&quot;);
+        //创建交易信息模型对象
+        AlipayTradeWapPayModel precreateModel = new AlipayTradeWapPayModel();
+        //商户订单号，需要保证不重复
+        precreateModel.setOutTradeNo(order);
+        //订单金额
+        precreateModel.setTotalAmount(money);
+        //交易主题
+        precreateModel.setSubject(&quot;Ada&quot;);
+        //商品名称
+        precreateModel.setBody(&quot;订单对象.get()&quot;);
+        //对一笔交易的具体描述信息。如果是多种商品，请将商品描述字符串累加传给body
+        precreateModel.setSellerId(&quot;出售商品&quot;);
+        //销售产品码，商家和支付宝签约的产品码，该产品请填写固定值：QUICK_WAP_WAY
+        precreateModel.setProductCode(&quot;QUICK_WAP_WAY&quot;);
+        //设置支付宝交易超时 取值范围：1m～15d。m-分钟，h-小时，d-天，1c-当天（1c-当天的情况下，无论交易何时创建，都在0点关闭） 
+         precreateModel.setTimeoutExpress(&quot;5m&quot;);
+        //创建阿里请求对象
+        AlipayTradeWapPayRequest alipayRequest = new AlipayTradeWapPayRequest();
+        //业务请求参数的集合
+        alipayRequest.setBizModel(precreateModel);
+        //设置后台异步通知的地址，在手机端支付后支付宝会通知后台(成功或者失败)，手机端的真实支付结果依赖于此地址
+        alipayRequest.setNotifyUrl(notify_url);
+        //支付成功后的跳转页面,由于前台回跳的不可靠性，前台回跳只能作为商户支付结果页的入口，最终支付结果必须以异步通知或查询接口返回为准，不能依赖前台回跳
+        alipayRequest.setReturnUrl(return_url);
+        //返回响应的输入密码完成支付的表单给商品详情页面
+        map.put(&quot;return_code&quot;, &quot;success&quot;);
+        map.put(&quot;return_data&quot;, alipayClient.pageExecute(request).getBody());
+        return map;
+
+    //下面是直接拉起支付页面 没有到商品详情页面
+//        String form=&quot;&quot;;
+//        try {
+//            //进行执行
+//            form = alipayClient.pageExecute(alipayRequest).getBody(); //调用SDK生成表单
+//        } catch (AlipayApiException e) {
+//            e.printStackTrace();
+//        }
+//        httpResponse.setContentType(&quot;text/html;charset=UTF-8&quot;);
+//        httpResponse.getWriter().write(form);//直接将完整的表单html输出到页面
+//        httpResponse.getWriter().flush();
+//        httpResponse.getWriter().close();
+    }
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="支付宝notifyurl支付异步通知和returnurl支付成功回跳" tabindex="-1"><a class="header-anchor" href="#支付宝notifyurl支付异步通知和returnurl支付成功回跳" aria-hidden="true">#</a> 支付宝<code>NotifyUrl</code>支付异步通知和<code>ReturnUrl</code>支付成功回跳:</h6><p><strong>(只能回调公司绑定好的公网能访问的域名 例如: https:www.baidu.com/pay/alipaynotify)</strong></p><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>/**
+     * 支付宝支付状态结果异步通知()
+     * @param req
+     * @param resp
+     * @return (并返回成功或者失败给支付宝通知接口,不然支付宝会一直异步通知)
+     */
+    @RequestMapping(value = &quot;/alipaynotify&quot;, method = RequestMethod.POST)
+    @ResponseBody
+    public String AlipayNotify(HttpServletRequest req, HttpServletResponse resp) throws IOException, AlipayApiException {
+        //将异步通知中所有参数都经过工具类处理后存放到map中
+        Map&lt;String, String&gt; params = PayUtil.parseParams(req.getParameterMap());
+        // 验证通知合法性
+        boolean verify_result = AlipaySignature.rsaCheckV1(paramsMap, &quot;应用公匙&quot;, &quot;字符集(UTF-8)&quot;, &quot;(签名类型例如:RSA2)&quot;);
+        // 验证签名
+        if(! verify_result){
+            logger.warn(&quot;---支付宝异步通知-&gt;签名验证失败&quot;);
+            return PayUtil.generatePayErrorReplyParams();
+        }
+        //查看状态是否是交易成功状态
+        if (&quot;TRADE_SUCCESS&quot;.equals(params.get(&quot;trade_status&quot;).toString())) { 
+            //查询该订单是否存在.....
+            IdmOrder idmOrder = (IdmOrder)缓存Redis.getIdmOrderByBillNo(order);
+            if (order != null) {
+                //1、商户需要验证该通知数据中的out_trade_no是否为商户系统中创建的订单号，
+                if ( ! &quot;支付接口返回订单号&quot;.equals(数据库订单号)) {
+                    logger.info(&quot;支付宝异步通知-&gt;订单号与商户号订单不一致！&quot; + out_trade_no);
+                    return PayUtil.generatePayErrorReplyParams();
+                }
+                //2、校验返回的订单金额是否与商户侧的订单金额一致(查询商户后台的订单金额进行比较)
+                if (order.getOrderAmount() != Double.parseDouble(total_amount)) {
+     logger.info(&quot;支付宝异步通知-&gt;订单中的交易金额和返回的金额不一致！&quot; + order.getOrderAmount());
+                    return PayUtil.generatePayErrorReplyParams();
+                }
+    //3、校验通知中的seller_id（或者seller_email) 是否为out_trade_no这笔单据的对应的操作方
+                if (!xxxx.seller_id.equals(seller_id)) {
+                    logger.info(&quot;支付宝异步通知-&gt;收款支付宝账户号不一致！&quot; + seller_id);
+                    return PayUtil.generatePayErrorReplyParams();
+                }
+                //    4、验证app_id是否为该商户本身
+                if (!app_id.equals(XXXX.ALI_APP_ID)) {
+                    logger.info(&quot;---支付宝异步通知-&gt;商户号不一致！&quot; + app_id);
+                    return PayUtil.generatePayErrorReplyParams();
+                }
+                //更改商品订单状态....
+                //把商品订单存储进数据库 (然后删除缓存的数据)
+                //查商品库存.........
+                //减商品库存........
+                //极光通知App客户端(支付结果通知)
+        JpushService.pullMessages(别名,&quot;PAY_RESULT&quot;,&quot;success&quot;,&quot;支付结果通知&quot;); 
+                //返回成功状态码给支付宝接口
+                return PayUtil.generatePaySuccessReplyParams();
+        }
+        logger.info(&quot;支付宝异步通知-&gt;支付结果返回的不是成功的状态码，请详查！&quot;);
+        return PayUtil.generatePayErrorReplyParams();
+    }
+
+
+    /**
+     * 支付宝成功支付后页面跳转 ReturnUrl
+     */
+    @RequestMapping(value = &quot;/AlipaySuccess&quot;, method = RequestMethod.GET)
+    public String AlipaySuccess(HttpServletRequest req, HttpServletResponse res) {
+        //获取支付宝GET过来反馈信息
+        Map&lt;String, String&gt; params = PayUtil.parseParams(req.getParameterMap());
+        if (PayUtil.checkedParams(params)) {
+            //验证成功返回成功页面,或者成功状态给前端来处理
+            return &quot;paySuccess&quot;;
+        }
+        return &quot;&quot;;
+    }
+
+  //--------------------------交易查询接口如果需要在官网自行查询-----------------------------------
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="微信方式-建议先看一次官网文档-jsapi-公众号-方式-博客教材" tabindex="-1"><a class="header-anchor" href="#微信方式-建议先看一次官网文档-jsapi-公众号-方式-博客教材" aria-hidden="true">#</a> <code>微信方式</code>: (建议先看一次<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_1" target="_blank" rel="noopener noreferrer">官网文档<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>) -<code>JSAPI(公众号)方式</code> <a href="https://blog.csdn.net/javaYouCome/article/details/79473743" target="_blank" rel="noopener noreferrer">博客教材<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></h3><p><strong>要先去进行配置应用获取应用App的ID(appid), 应用秘钥(appsecret), 商户ID(mch_id) 和API密钥(Key) 4个参数</strong></p><h6 id="控制层用户授权获取code" tabindex="-1"><a class="header-anchor" href="#控制层用户授权获取code" aria-hidden="true">#</a> 控制层用户授权获取<code>code</code></h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>/**
+ * 微信支付
+ */
+@Controller
+@RequestMapping(&quot;/weixin&quot;)
+public class WeiXinsPayController {
+
+    //公网能访问的公司域名加上项目支付接口地址
+    private static String WX_REDIRECT_URL =&quot;https://******.com/weixin&quot;
+
+    /**
+     *微信网页授权-用户授权获取code
+     *openid是微信用户在公众号appid下的唯一用户标识（appid不同，则获取到的openid就不同），可用于永久标记一个用户，同时也是微信JSAPI支付的必传参数
+     */
+    @RequestMapping(value=&quot;/getcode&quot;)
+    public String getcode(Model model,HttpServletRequest req){
+        //购买商品生成的订单号方便后面调用顺便传递
+        String order = req.getParameter(&quot;order&quot;);
+        //拼接获取code的链接 ---redirect_uri参数：授权后重定向的回调链接地址 (state是重定向会带上的参数) 最好使用restful风格传递参数 (参数是网站链接要使用state传递)
+String url = &quot;https://open.weixin.qq.com/connect/oauth2/authorize?appid=&quot;+AppID()+
+                &quot;&amp;redirect_uri=&quot;+WX_REDIRECT_URL+&quot;/getopenid/&quot; + order +&quot;&amp;response_type=code&amp;scope=snsapi_base&amp;state=&quot;+urlSmallPicture+&quot;#wechat_redirect&quot;;
+        model.addAttribute(&quot;authorize&quot;, url);
+        //返回网站链接数据使用跳板页,进行访问
+        return &quot;authorize&quot;;
+    }
+}    
+1234567891011121314151617181920212223242526
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="跳板页-jsp跳转url" tabindex="-1"><a class="header-anchor" href="#跳板页-jsp跳转url" aria-hidden="true">#</a> <strong>跳板页**</strong>.jsp<strong>跳转</strong>url****:**</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot;%&gt;
+&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+&lt;!DOCTYPE html
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        window.location.href = &quot;${authorize}&quot;;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+12345678910111213
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="控制层获取-openid" tabindex="-1"><a class="header-anchor" href="#控制层获取-openid" aria-hidden="true">#</a> <strong>控制层获取**openid</strong>:**</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>   /** 
+     * 获取openid就够了
+     * @param req
+     * @param model
+     * @param order 重定向链接带的参数使用restful风格接收
+     * @param code 响应参数
+     * @param state 响应参数
+     * @return
+     */
+    @RequestMapping(&quot;/getopenid/{order}&quot;)
+    public String wx(HttpServletRequest req, Model model, @PathVariable(&quot;order&quot;) String order, @RequestParam(&quot;state&quot;) String state, @RequestParam(&quot;code&quot;)String code ){
+        Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+        params.put(&quot;appid&quot;, AppID);
+        params.put(&quot;secret&quot;,&quot;应用密匙&quot;);
+        //填写第一步获取的code参数
+        params.put(&quot;code&quot;, code);
+        //固定写法
+        params.put(&quot;grant_type&quot;, &quot;authorization_code&quot;);
+        //使用发送http请求的工具类发送http. get() 方式的请求获取响应参数
+        String openidJson = HttpUtil.get(&quot;https://api.weixin.qq.com/sns/oauth2/access_token&quot;, params);
+        //转换成map类型 K-V
+        Map&lt;String, Object&gt; parseObject = JSON.parseObject(openidJson);
+        //获得openid:
+        String openId = parseObject.get(&quot;openid&quot;).toString();
+        model.addAttribute(&quot;openid&quot;, openId);
+        //商品订单
+        model.addAttribute(&quot;order&quot;, order);
+        //订单号图片地址
+        model.addAttribute(&quot;imgurl&quot;, state);
+        //封装数据返回页面显示
+        return &quot;confirmspay&quot;;
+    }
+1234567891011121314151617181920212223242526272829303132
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="商品详情页面和调起微信前端脚本发起下单支付-jsp页面" tabindex="-1"><a class="header-anchor" href="#商品详情页面和调起微信前端脚本发起下单支付-jsp页面" aria-hidden="true">#</a> <strong>商品详情页面和调起微信前端脚本发起下单支付 .jsp页面:</strong></h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; %&gt;
+&lt;%@ include file=&quot;/WEB-INF/views/include/taglib.jsp&quot; %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;%--jQuery--%&gt;
+    &lt;script src=&quot;${ctxStatic}/common/js/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt;
+    &lt;%--微信支付脚本--%&gt;
+    &lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;支付确认&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .btn_style {
+            width: 90%;
+            margin-top: 50px;
+            margin-left: 5%;
+            height: 50px;
+            background-color: #805f45;
+            color: white;
+            font-size: 16px;
+        }
+    &lt;/style&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function submitData() {
+            //确定支付调用统一下单接口
+            $.ajax({
+                    url: &quot;/weixin/paying&quot;,
+                    data: {
+                        &quot;openid&quot;: $(&quot;#openid&quot;).val(),
+                        &quot;billNumber&quot;: $(&quot;#order&quot;).val()
+                    },
+                    type: &#39;post&#39;,
+                    dataType: &#39;json&#39;,
+                    success: function (data) {
+                          if (data.return_code == &#39;success&#39;) {
+                                var appId = data.appId;
+                                var timeStamp = data.timeStamp;
+                                var nonceStr = data.nonceStr;
+                                var package = data.package;
+                                var signType = data.signType;
+                                var paySign = data.paySign;
+                                WeixinJSBridge
+                                    .invoke(
+                                        &#39;getBrandWCPayRequest&#39;,
+                                        {
+                                            &quot;appId&quot;: appId, //公众号名称，由商户传入     obj.appid
+                                            &quot;timeStamp&quot;: timeStamp, //时间戳，自1970年以来的秒数
+                                            &quot;nonceStr&quot;: nonceStr, //随机串    obj.nonce_str
+                                            &quot;package&quot;: package, //订单详情扩展字符串
+                                            &quot;signType&quot;: signType, //微信签名方式：
+                                            &quot;paySign&quot;: paySign //微信签名
+                                        },
+                                        function (res) {
+                                            if (res.err_msg == &#39;get_brand_wcpay_request:ok&#39;) {
+                                      //支付成功，可以做跳转到支付成功的提示页面(或者请求后端)
+              window.location.href = &quot;${pageContext.request.contextPath}/weixin/payingSuccess&quot;;
+                                        // alert(JSON.stringify(res));
+                                    } else if (res.err_msg == &#39;get_brand_wcpay_request:cancel&#39;) {
+                                        //支付取消
+                                        alert(&quot;支付取消&quot;);
+                                    } else if (res.err_msg == &#39;get_brand_wcpay_request:fail&#39;) {
+                                        //支付失败
+                                        alert(&quot;支付失败&quot;);
+                                        // alert(JSON.stringify(res));
+                                    }
+                                });
+                        if (typeof WeixinJSBridge == &quot;undefined&quot;) {
+                            if (document.addEventListener) {
+                                document.addEventListener(&#39;WeixinJSBridgeReady&#39;, onBridgeReady, false);
+                            } else if (document.attachEvent) {
+                                document.attachEvent(&#39;WeixinJSBridgeReady&#39;, onBridgeReady);
+                                document.attachEvent(&#39;onWeixinJSBridgeReady&#39;, onBridgeReady);
+                            }
+                        }
+                    } else if (data.return_code == &#39;fail&#39;) {
+                        //提示订单已经支付
+                        alert(data.return_data);
+                    }
+                },
+                error: function () {
+                    console.log(&#39;request error!&#39;);
+                }
+            });
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;%--隐藏域提交数据用--%&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;order&quot; id=&quot;order&quot; value=&quot;${order}&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;openid&quot; id=&quot;openid&quot; value=&quot;${openid}&quot;&gt;
+&lt;div style=&quot;width: 100%; margin-top: 100px; text-align: center;&quot;&gt;
+    &lt;img src=&quot;${imgurl}&quot; style=&quot;width: 200px;&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;button class=&quot;btn btn_style&quot; id=&quot;btnSubmit&quot; οnclick=&quot;submitData();&quot;&gt;确
+        认
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="控制层-微信统一下单" tabindex="-1"><a class="header-anchor" href="#控制层-微信统一下单" aria-hidden="true">#</a> 控制层:微信统一下单:</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>    /**
+     * 统一下单
+     * @param req
+     * @return
+     * @throws Exception 
+     */
+    @RequestMapping(value=&quot;/paying&quot;,method=RequestMethod.POST)
+    @ResponseBody
+    public Map&lt;String, Object&gt; paying(HttpServletRequest req) throws Exception{
+        //获取订单号和openid参数
+        String order = req.getParameter(&quot;order&quot;);
+        String openid = req.getParameter(&quot;openid&quot;);
+        //创建线程安全的Map
+        Map&lt;String, Object&gt; maps = new ConcurrentHashMap&lt;&gt;();
+        //根据订单判断商户是否存在该订单
+        IdmOrder idmOrder = (IdmOrder)缓存Redis.getIdmOrderByBillNo(order);
+        if (idmOrder == null) {
+            logger.info(&quot;商户端-&gt;该订单不存在！&quot;);
+            maps.put(&quot;result_Msg&quot;, 错误信息);
+            return maps;
+        }......
+        Map&lt;String, String&gt; reqData = new HashMap&lt;&gt;();
+        //随机字符串 必填-每次请求都要是新的随机字符串
+        reqData.put(&quot;nonce_str&quot;, WXPayUtil.generateNonceStr());//WXPayUtil.generateNonceStr()
+        //商品描述 必填
+        reqData.put(&quot;body&quot;, ##);//&quot;Ada&quot;
+        //商户号 必填
+        reqData.put(&quot;mch_id&quot;, 商户ID(mch_id));
+        //商品订单号 必填
+        reqData.put(&quot;out_trade_no&quot;, order);
+        //支付金额(将元转换为分) 必填
+        reqData.put(&quot;total_fee&quot;, PayUtil.changeY2F(###));
+        //终端IP 不知道怎么写可以写本地127.0.1 必填
+        reqData.put(&quot;spbill_create_ip&quot;, &quot;127.0.1&quot;);//客户端主机
+        //异步回调通知地址通知url必须为外网可访问的url，不能携带参数   必填
+        reqData.put(&quot;notify_url&quot;, ###);  //&quot;https://*****.com/wxpay/notifying&quot;
+        //交易类型JSAPI 必填
+        reqData.put(&quot;trade_type&quot;, &quot;JSAPI&quot;);
+        //之前获取的openid 必填
+        reqData.put(&quot;openid&quot;, openid);
+        //商品id  
+        reqData.put(&quot;product_id&quot;, 按需);
+        //创建微信下单对象 (注入微信下单配置类)
+        WXPay wxpay = new WXPay(new MyWXPayConfig());
+        //执行下单 统一下单接口unifiedOrder
+        Map&lt;String, String&gt; responseparams = wxpay.unifiedOrder(reqData);
+            //预支付id
+            String prepay_id = &quot;prepay_id=; 
+            if (&quot;SUCCESS&quot;.equals(responseparams.return_code)) {  
+                String packages= prepay_id + (String) responseparams.get(&quot;prepay_id&quot;); 
+                //App的ID
+                maps.put(&quot;appId&quot;, ##);
+                //时间戳
+                maps.put(&quot;timeStamp&quot;, timeStamp);
+                //随机字符串
+                maps.put(&quot;nonceStr&quot;, #);
+                //订单详情扩展字符串package是关键字加个S处理
+                maps.put(&quot;package&quot;, packages);
+                //签名方式 默认为MD5，支持HMAC-SHA256和MD5。注意此处需与统一下单的签名类型一致
+                maps.put(&quot;signType&quot;, #); 
+ //注：这里采用 HMACSHA256进行签名,因为预下单支付那里默认采用HMACSHA256,要保持一致
+String paySign = WXPayUtil.generateSignature(maps,&quot;API密钥(Key)&quot;,SignType.HMACSHA256); 
+            maps.put(&quot;return_code&quot;, &quot;success&quot;);
+            maps.put(&quot;paySign&quot;, paySign);
+            }
+
+        }else {
+            maps.put(&quot;return_code&quot;, &quot;error&quot;);
+            maps.put(&quot;return_data&quot;, &quot;null&quot;);
+        }
+        return maps;
+
+    }
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="控制层-微信异步通知回调notify-url" tabindex="-1"><a class="header-anchor" href="#控制层-微信异步通知回调notify-url" aria-hidden="true">#</a> 控制层:微信异步通知回调<code>notify_url</code>:</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>    /**
+     * 异步回调通知接口 (并返回成功或者失败给微信通知接口,不然微信会一直异步通知)
+     * @param request
+     */
+    @ResponseBody
+    @RequestMapping(&quot;/notifying&quot;)
+    public String notifying(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        // 获取请求数据,将请求转成xml
+        String xmlData = null;
+        try {
+            xmlData = PayUtil.copyToString(request.getInputStream(), Charset.forName(&quot;utf-8&quot;));
+        } catch (IOException e) {
+            logger.info(&quot;微信公众号支付异步通知&gt;&gt;数据无法转成xml异常！&quot;);
+            //返回支付失败状态给微信
+            return PayUtil.generatePayErrorReplyXML();
+        }
+        // 将得到xml转为map,验证签名是否成功
+        Map&lt;String, String&gt; xmlToMapData = WXPayUtil.xmlToMap(xmlData);
+        logger.info(&quot;得到的xmlToMapData:&quot;+xmlToMapData);
+        //获取签名sign
+        String sign = xmlToMapData.get(&quot;sign&quot;);
+        //重新生成新sign
+        String newsign = WXPayUtil.generateSignature(xmlToMapData, API密钥(Key),SignType.HMACSHA256);
+        // 验证签名验证是否成功
+        if(! sign.equals(newsign)) {
+            logger.info(&quot;微信公众号支付异步通知&gt;&gt;验证签名失败！&quot;);
+            return PayUtil.generatePayErrorReplyXML();
+        }
+        //查询return_code是否是支付成功了success
+        if (xmlToMapData.get(&quot;return_code&quot;).equals(&quot;SUCCESS&quot;)) {
+            //支付成功之后的逻辑
+            // 商户订单号
+            String out_trade_no = xmlToMapData.get(&quot;out_trade_no&quot;).toString();
+            // 微信支付订单号
+            String thrid_trade_no = xmlToMapData.get(&quot;transaction_id&quot;).toString();
+            // 订单金额
+            String total_fee = xmlToMapData.get(&quot;total_fee&quot;).toString();
+            //查询该订单是否存在
+            IdmOrder order = (IdmOrder)缓存Redis.getIdmOrderByBillNo(out_trade_no);
+            if (order != null) {
+                //    1、商户需要验证该通知数据中的out_trade_no是否为商户系统中创建的订单号，
+                if (!out_trade_no.equals(order.getBillNo())) {
+                    logger.info(&quot;微信公众号支付异步通知-&gt;订单号与商户号订单不一致！&quot; + out_trade_no);
+                    return PayUtil.generatePayErrorReplyXML();
+                }
+                //2、校验返回的订单金额是否与商户侧的订单金额一致(查询商户后台的订单金额进行比较)
+                if (Integer.parseInt(PayUtil.changeY2F(order.getOrderAmount().toString())) != Integer.parseInt(total_fee)) {
+                    logger.info(&quot;微信公众号支付异步通知-&gt;订单中的交易金额和返回的金额不一致！&quot; + order.getOrderAmount());
+                    return PayUtil.generatePayErrorReplyXML();
+                }
+                //更改商品订单状态...自行操作
+                 //把商品订单存储进数据库 (然后删除缓存的数据)
+                //查商品库存...自行操作
+                //减商品库存...自行操作    
+                //通知客户端APP(支付结果通知)
+    JpushService.pullMessages(idmItem.getSn(),&quot;PAY_RESULT&quot;,&quot;success&quot;,&quot;支付结果通知&quot;); //别名
+            }
+            //返回成功状态码给微信端
+            return PayUtil.generatePaySuccessReplyXML();
+        }
+        logger.info(&quot;微信公众号支付异步通知-&gt;支付结果返回的不是成功的状态码，请详查！&quot;);
+        return PayUtil.generatePayErrorReplyXML();
+    }
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="微信下单配置类" tabindex="-1"><a class="header-anchor" href="#微信下单配置类" aria-hidden="true">#</a> <strong>微信下单配置类:</strong></h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+/**
+ * 扫码支付参数配置，可用于支付和退款的参数
+ */
+public class MyWXPayConfig extends WXPayConfig {
+
+    private byte[] certData;
+
+    @Override
+    public String getAppID() {
+        return &quot;应用App的ID&quot;;
+    }
+
+    public String getAPIKey(){
+        return &quot;API密钥Key&quot;;
+    }
+
+    @Override
+    public String getMchID() {
+        return &quot;商户ID&quot;;
+    }
+
+    @Override
+    public String getKey() {
+        return &quot;应用秘钥(appsecret)&quot;;
+    }
+
+    @Override
+    public InputStream getCertStream() {
+        ByteArrayInputStream certBis = new ByteArrayInputStream(this.certData);
+        return certBis;
+    }
+
+    @Override
+    public int getHttpConnectTimeoutMs() {
+        // TODO Auto-generated method stub
+        return 10*1000;
+    }
+
+    @Override
+    public int getHttpReadTimeoutMs() {
+        // TODO Auto-generated method stub
+        return 20*1000;
+    }
+
+    @Override
+    public IWXPayDomain getWXPayDomain() { 
+        return new MyWXPayDomain();
+    }
+
+}
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类" tabindex="-1"><a class="header-anchor" href="#支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类" aria-hidden="true">#</a> <strong>支付宝和微信封装的响应状态和解析支付接口返回的响应参数工具类:</strong></h3><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>import com.alipay.api.AlipayApiException;
+import com.alipay.api.AlipayClient;
+import com.alipay.api.DefaultAlipayClient;
+import com.alipay.api.internal.util.AlipaySignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class PayUtil {
+
+    protected static Logger logger = LoggerFactory.getLogger(PayUtil.class);
+    public static final int BUFFER_SIZE = 4096;
+
+    /**
+     * 将元为单位的转换为分 替换小数点，支持以逗号区分的金额
+     * @param amount
+     * @return
+     */
+    public static String changeY2F(String amount) {
+        String currency = amount.replaceAll(&quot;\\$|\\￥|\\,&quot;, &quot;&quot;); // 处理包含, ￥
+        // 或者$的金额
+        int index = currency.indexOf(&quot;.&quot;);
+        int length = currency.length();
+        Long amLong = 0l;
+        if (index == -1) {
+            amLong = Long.valueOf(currency + &quot;00&quot;);
+        } else if (length - index &gt;= 3) {
+            amLong = Long.valueOf((currency.substring(0, index + 3)).replace(&quot;.&quot;, &quot;&quot;));
+        } else if (length - index == 2) {
+            amLong = Long.valueOf((currency.substring(0, index + 2)).replace(&quot;.&quot;, &quot;&quot;) + 0);
+        } else {
+            amLong = Long.valueOf((currency.substring(0, index + 1)).replace(&quot;.&quot;, &quot;&quot;) + &quot;00&quot;);
+        }
+        return amLong.toString();
+    }
+
+    /**
+     * 支付结果成功时，发给微信支付的参数
+     * @return
+     */
+    public static String generatePaySuccessReplyXML() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(&quot;&lt;xml&gt;&quot;).append(&quot;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;&quot;)
+        .append(&quot;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;&quot;).append(&quot;&lt;/xml&gt;&quot;);
+        return stringBuffer.toString();
+    }
+
+    /**
+     * 支付结果失败时，发给微信支付的参数
+     * @return
+     */
+    public static String generatePayErrorReplyXML() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(&quot;&lt;xml&gt;&quot;).append(&quot;&lt;return_code&gt;&lt;![CDATA[FAIL]]&gt;&lt;/return_code&gt;&quot;)
+        .append(&quot;&lt;return_msg&gt;&lt;![CDATA[ERROR]]&gt;&lt;/return_msg&gt;&quot;).append(&quot;&lt;/xml&gt;&quot;);
+        return stringBuffer.toString();
+    }
+
+    /**
+     * 支付宝结果成功时，发给支付宝的参数
+     * @return
+     */
+    public static String generatePaySuccessReplyParams() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(&quot;success&quot;);
+        return stringBuffer.toString();
+    }
+    /**
+     * 支付宝结果失败时，发给支付宝的参数
+     * @return
+     */
+    public static String generatePayErrorReplyParams() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(&quot;failure&quot;);
+        return stringBuffer.toString();
+    }
+
+    /**
+     * 解析alipay异步通知的参数
+     * @param requestParams 样例：
+     * {
+     *    &quot;gmt_create&quot;: [&quot;2017-07-14 14:38:54&quot;],
+     *    &quot;charset&quot;: [&quot;utf-8&quot;]
+     *    ...
+     *    }
+     */
+    public static Map&lt;String, String&gt; parseParams(Map&lt;?, ?&gt; requestParams){
+        Map&lt;String,String&gt; params = new HashMap&lt;String,String&gt;();
+        for (Iterator&lt;?&gt; iter = requestParams.keySet().iterator(); iter.hasNext();) {
+            String name = (String) iter.next();
+            String[] values = (String[]) requestParams.get(name);
+            String valueStr = &quot;&quot;;
+            for (int i = 0; i &lt; values.length; i++) {
+                valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + &quot;,&quot;;
+            }
+            params.put(name, valueStr);
+        }
+        return params;
+    }
+
+    /**
+     * 验证支付宝参数合法性
+     * 使用支付宝2.0SDK自带的验证方法进行验证 AlipaySignature.rsaCheckV1
+     * @param params
+     * @return
+     */
+    public static boolean checkedParams(Map&lt;String, String&gt; params){
+        try {
+            //切记alipaypublickey是支付宝的公钥，请去open.alipay.com对应应用下查看。
+            return AlipaySignature.rsaCheckV1(params, AliPayConfig.ALI_PUBLIC_KEY, AliPayConfig.ALI_CHARSET, AliPayConfig.ALI_SIGN_TYPE);
+        } catch (AlipayApiException e) {
+            // TODO Auto-generated catch block
+            logger.error(&quot;---支付宝API异常&gt;&gt;&quot;);
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 根据支付宝对应费率，计算用户提现费用
+     * 支付宝费率0.15%，费用区间：2-25，即不低于2元，上到25封顶
+     * @param amount
+     * @return
+     */
+    public static double cunWithdrawCost(double amount){
+        double coust = BigDecimalUtil.mul(amount, 0.0015);
+        if(coust &lt;= 2 ){
+            return 2;
+        }
+        if(coust &gt;= 25){
+            return 25;
+        }
+        return coust;
+    }
+
+    public static String getAtt(HttpServletRequest request, String key){
+        return (String)request.getSession().getAttribute(key);
+    }
+
+    /**
+     * 将元为单位的转换为分 （乘100）
+     * 
+     * @param amount
+     * @return
+     */
+    public static String changeY2F(Long amount) {
+        return BigDecimal.valueOf(amount).multiply(new BigDecimal(100)).toString();
+    }
+
+
+    /**
+     *  将流转换为xml 
+     * @param in
+     * @param charset
+     * @throws IOException
+     */
+    public static String copyToString(InputStream in, Charset charset) throws IOException {
+        StringBuilder out = new StringBuilder();
+        InputStreamReader reader = new InputStreamReader(in, charset);
+        char[] buffer = new char[BUFFER_SIZE];
+        int bytesRead = -1;
+        while ((bytesRead = reader.read(buffer)) != -1) {
+            out.append(buffer, 0, bytesRead);
+        }
+        return out.toString();
+    }
+}
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="支付-支付宝或者微信-依赖" tabindex="-1"><a class="header-anchor" href="#支付-支付宝或者微信-依赖" aria-hidden="true">#</a> <strong>支付(支付宝或者微信)依赖:</strong></h3><h6 id="扩展-微信下单调用http工具类发送下单接口的方式" tabindex="-1"><a class="header-anchor" href="#扩展-微信下单调用http工具类发送下单接口的方式" aria-hidden="true">#</a> 扩展: 微信下单调用<code>http</code>工具类发送下单接口的方式</h6><div class="language-Plain ext-Plain line-numbers-mode"><pre class="language-Plain"><code>/**
+     * 微信下单
+     * @param req
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value=&quot;/paying&quot;,method=RequestMethod.POST)
+    @ResponseBody
+    public Map&lt;String, String&gt; paying(HttpServletRequest req) throws Exception{
+        String billNumber = req.getParameter(&quot;billNumber&quot;);
+        String openid = req.getParameter(&quot;openid&quot;);
+        //判断商户是否存在该订单..............
+        Map&lt;String, String&gt; reqData = new HashMap&lt;&gt;();
+        //商户APPid
+        reqData.put(&quot;appid&quot;, &quot;商户Appid&quot;);
+        //随机字符串 必填-每次请求都要是新的随机字符串
+        reqData.put(&quot;nonce_str&quot;, WXPayUtil.generateNonceStr());//WXPayUtil.generateNonceStr()
+        //商品描述 必填
+        reqData.put(&quot;body&quot;, ##);//&quot;咖啡&quot;
+        //商户号 必填
+        reqData.put(&quot;mch_id&quot;, 商户ID(mch_id));
+        //商品订单号 必填
+        reqData.put(&quot;out_trade_no&quot;, order);
+        //支付金额(将元转换为分) 必填
+        reqData.put(&quot;total_fee&quot;, PayUtil.changeY2F(###));
+        //终端IP 不知道怎么写可以写本地127.0.1 必填
+        reqData.put(&quot;spbill_create_ip&quot;, &quot;127.0.0.1&quot;);//客户端主机
+        //异步回调通知地址通知url必须为外网可访问的url，不能携带参数   必填
+        reqData.put(&quot;notify_url&quot;, ###);  //&quot;https://www.baidu.com/wxpay/notifying&quot;
+        //交易类型JSAPI 必填
+        reqData.put(&quot;trade_type&quot;, &quot;JSAPI&quot;);
+        //之前获取的openid 必填
+        reqData.put(&quot;openid&quot;, openid);
+        //商品id  
+        reqData.put(&quot;product_id&quot;, 按需);
+        //签名加密方式,如果不是使用默认MD5就需要指定
+        reqData.put(&quot;sign_type&quot;, &quot;HMAC-SHA256&quot;);
+        //生成HMAC-SHA256加密方式签名的Xml，通过httpClient发送请求得到数据
+String xmlParam = WXPayUtil.generateSignedXml(reqData, &quot;API密钥(paternerKey)&quot;,SignType.HMACSHA256);
+        //使用http工具类发送post请求,工具类自行找!
+        HttpClient httpClient=new HttpClient(&quot;https://api.mch.weixin.qq.com/pay/unifiedorder&quot;);
+        httpClient.setHttps(true);
+        httpClient.setXmlParam(xmlParam);
+        httpClient.post();
+        //获取内容
+        String content = httpClient.getContent();
+        //转换内容为map
+        Map&lt;String, String&gt; refund = WXPayUtil.xmlToMap(content);
+        Map&lt;String,String&gt; maps=new HashMap&lt;&gt;();
+        //成功下单的话 包装前端支付需要的参数
+        if (&quot;SUCCESS&quot;.equals(refund.get(&quot;return_code&quot;).toString())
+                ) {
+            String timeStamp=String.valueOf(WXPayUtil.getCurrentTimestamp());
+            String appIds=myWXPayConfig.getAppID();
+            String nonceStrs=UUID.randomUUID().toString().replaceAll(&quot;-&quot;, &quot;&quot;).toUpperCase();
+            String prepay_id=refund.get(&quot;prepay_id&quot;).toString();
+            String packages=&quot;prepay_id=&quot;+prepay_id;
+            String signType=SignType.MD5.toString();
+               //App的ID
+                maps.put(&quot;appId&quot;, ##);
+                //时间戳
+                maps.put(&quot;timeStamp&quot;, timeStamp);
+                //随机字符串
+                maps.put(&quot;nonceStr&quot;, #);
+                //订单详情扩展字符串package是关键字加个S处理
+                maps.put(&quot;package&quot;, packages);
+                //签名方式 默认为MD5，支持HMAC-SHA256和MD5。注意此处需与统一下单的签名类型一致
+                maps.put(&quot;signType&quot;, #); 
+            /**
+             * 注：这里采用 HMACSHA256进行签名,
+             * 因为预下单支付那里默认采用HMACSHA256,要保持一致
+             */
+            String paySign = WXPayUtil.generateSignature(maps,&quot;API密钥(Key)&quot;,SignType.HMACSHA256);
+            logger.info(&quot;paySign:&quot;+paySign);
+            maps.put(&quot;return_code&quot;, &quot;success&quot;);
+            maps.put(&quot;paySign&quot;, paySign);
+             return maps;
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/bbzywkq/bbzywkq.github.io/edit/main/docs/待整理/支付宝与微信二码合一,扫码支付(学习笔记).md" rel="noopener noreferrer" target="_blank" aria-label="在 GitHub 上编辑此页"><!--[--><!--]--> 在 GitHub 上编辑此页 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">编辑者: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: bbzykkall@gmail.com">bbzy alone</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.234ff118.js" defer></script>
+  </body>
+</html>
